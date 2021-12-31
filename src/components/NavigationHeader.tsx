@@ -11,10 +11,19 @@ export function NavigationHeader() {
                 <Navbar.Collapse id="navbarContent"  className="justify-content-center">
                     <Nav defaultActiveKey="home">
                         <Nav.Link eventKey="home">
-                            <Link to="/" className="text-reset text-decoration-none">About</Link>
+                            <Link to="/" className="text-reset text-decoration-none">Home</Link>
                         </Nav.Link>
                         <Nav.Link eventKey="projects">
                             <Link to="/projects" className="text-reset text-decoration-none">Projects</Link>
+                        </Nav.Link>
+                        <Nav.Link eventKey="resume"
+                                  active={false}
+                                  className="text-decoration-none"
+                                  href="https://drive.google.com/file/d/1VEvEtl6TwuN7egP8n3IlS3eipqQqKojr/view?usp=sharing"
+                                  target="_blank"
+                                  rel="noopener noreferrer"
+                        >
+                            Resume
                         </Nav.Link>
                     </Nav>
                 </Navbar.Collapse>
