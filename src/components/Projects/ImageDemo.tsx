@@ -1,5 +1,5 @@
-import {ImageInfo} from "../../pages/ProjectPage";
 import {Figure} from "react-bootstrap";
+import {ImageInfo} from "../../data/DemoInfo";
 
 export function ImageDemo(props: { image: ImageInfo }) {
     return (

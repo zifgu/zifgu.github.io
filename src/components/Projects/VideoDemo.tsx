@@ -1,5 +1,5 @@
-import {VideoInfo} from "../../pages/ProjectPage";
 import {Figure} from "react-bootstrap";
+import {VideoInfo} from "../../data/DemoInfo";
 
 export function VideoDemo(props: { video: VideoInfo }) {
     return (

@@ -1,5 +1,5 @@
-import {ProjectSubheading} from "../../pages/ProjectPage";
 import {ReactNode} from "react";
+import {PageSubheading} from "../PageSubheading";
 
 export function ProjectLessons(props: {lessons?: ReactNode[]}) {
     if (!props.lessons) {
@@ -16,7 +16,7 @@ export function ProjectLessons(props: {lessons?: ReactNode[]}) {
 
     return (
         <div>
-            <ProjectSubheading>What I learned:</ProjectSubheading>
+            <PageSubheading>What I learned:</PageSubheading>
             <ul>
                 {lessonsList}
             </ul>

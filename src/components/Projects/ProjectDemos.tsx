@@ -1,6 +1,7 @@
-import {ImageInfo, ProjectSubheading, VideoInfo} from "../../pages/ProjectPage";
 import {VideoDemo} from "./VideoDemo";
 import {ImageDemo} from "./ImageDemo";
+import { PageSubheading } from "../PageSubheading";
+import {ImageInfo, VideoInfo} from "../../data/DemoInfo";
 
 export function ProjectDemos(props: {videos?: VideoInfo[], images?: ImageInfo[]}) {
     if (!props.videos && !props.images) {
@@ -23,7 +24,7 @@ export function ProjectDemos(props: {videos?: VideoInfo[], images?: ImageInfo[]}
 
     return (
         <div>
-            <ProjectSubheading>Demos: </ProjectSubheading>
+            <PageSubheading>Demos: </PageSubheading>
             {imageDemos}
             {videoDemos}
         </div>

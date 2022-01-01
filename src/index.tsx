@@ -4,17 +4,19 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {HashRouter, Route, Routes} from "react-router-dom";
-import {About} from "./pages/About";
+import {HomePage} from "./pages/HomePage";
 import {NotFound} from "./pages/NotFound";
 import {ProjectPage} from "./pages/ProjectPage";
 import {ProjectsList} from "./pages/ProjectsList";
+import {AboutPage} from "./pages/AboutPage";
 
 ReactDOM.render(
   <React.StrictMode>
       <HashRouter>
           <Routes>
               <Route path="/" element={<App />}>
-                  <Route index element={<About />} />
+                  <Route index element={<HomePage />} />
+                  <Route path="about" element={<AboutPage />}/>
                   <Route path="projects">
                       <Route index element={<ProjectsList />} />
                       <Route path=":projectName" element={<ProjectPage />} />

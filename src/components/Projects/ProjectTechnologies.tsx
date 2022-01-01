@@ -1,12 +1,17 @@
-export function ProjectTechnologies(props: {technologies: string[]}) {
-    return (
-        <p className="text-dark my-2">
-            <i>Technologies: </i>
-            {" "}{formList(props.technologies)}
-        </p>
-    );
-}
+import React from "react";
 
-function formList(words: string[]): string {
-    return words.join(", ");
+export function ProjectTechnologies(props: {technologies: string[]}) {
+    const technologyElements = props.technologies.map((technology) => {
+        return (
+            <li key={technology} className="ps-3">
+                {technology}
+            </li>
+        )
+    });
+
+    return (
+        <ul className="list-unstyled">
+            {technologyElements}
+        </ul>
+    );
 }
