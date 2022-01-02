@@ -1,4 +1,5 @@
 import {ProjectInfo} from "./ProjectInfo";
+import TransductionHeading from "./images/transductionHeading.png";
 
 const projects: ProjectInfo[] = [
     {
@@ -83,7 +84,7 @@ const projects: ProjectInfo[] = [
                 velit, maximus ullamcorper auctor in, cursus a orci. Vestibulum nec ante lorem.
             </p></>
         ),
-        headerImageSrc: "images/transduction-heading.png",
+        headerImageSrc: TransductionHeading,
     }
 ]
 

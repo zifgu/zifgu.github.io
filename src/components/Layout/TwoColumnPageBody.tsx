@@ -18,6 +18,9 @@ export function TwoColumnPageBody(props: TwoColumnsProps) {
     );
 }
 
+export const sideColumnSize = 3;
+export const mainColumnSize = 8;
+
 interface SideColumnProps extends React.PropsWithChildren<any> {
     title?: string,
     subtitle?: string,
@@ -25,8 +28,8 @@ interface SideColumnProps extends React.PropsWithChildren<any> {
 
 export function SideColumn(props: SideColumnProps) {
     return (
-        <Col lg={3} className="mb-4">
-            <div className="my-5">
+        <Col lg={sideColumnSize}>
+            <div className="mt-2 my-lg-5">
                 <h3>{props.title}</h3>
                 <p className="fs-6 lead text-muted">
                     {props.subtitle}
@@ -39,7 +42,7 @@ export function SideColumn(props: SideColumnProps) {
 
 export function MainColumn(props: React.PropsWithChildren<any>) {
     return (
-        <Col lg={8}>
+        <Col lg={mainColumnSize}>
             {props.children}
         </Col>
     )

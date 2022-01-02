@@ -1,0 +1,17 @@
+a.top-navbar-link {
+    color: #8c8c8c;
+}
+
+a.top-navbar-link:link {
+    text-decoration: none;
+    border-bottom: none;
+}
+
+a.top-navbar-link:hover {
+    color: #171921;
+    border-bottom: 2px solid;
+}
+
+.nav-link.active .top-navbar-link {
+    color: #171921;
+}

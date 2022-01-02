@@ -6,16 +6,14 @@ export function SocialMediaList() {
     const socials = getSocials();
 
     return (
-        <div className="flex-column">
+        <ul className="list-unstyled">
             {
                 socials.map((socialMedia) => {
                     return (
-                        <div>
-                            <SocialMediaLink socialMedia={socialMedia} key={socialMedia.site}/>
-                        </div>
+                        <SocialMediaLink socialMedia={socialMedia} key={socialMedia.site}/>
                     );
                 })
             }
-        </div>
+        </ul>
     );
 }

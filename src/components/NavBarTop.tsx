@@ -2,44 +2,57 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import {Link} from "react-router-dom";
 import React from "react";
-import Col from "react-bootstrap/Col";
 import {HiOutlineMenu} from "react-icons/hi";
-import {resumeLink} from "../data/basic-info";
+import {myName, resumeLink} from "../data/basic-info";
+import "../css/navbar-top.css"
 
 export function NavBarTop() {
     return (
-        <Navbar expand="sm" bg="light" variant="light">
-            <Col>
-                <Navbar.Toggle className="mx-2" aria-controls="navbarContent">
-                    <HiOutlineMenu/>
-                </Navbar.Toggle>
-                <Navbar.Collapse id="navbarContent" className="justify-content-center">
-                    <Nav defaultActiveKey="home">
-                        <RouterNavbarLink eventKey={"home"} route={"/"} text={"Home"} />
-                        <RouterNavbarLink eventKey={"about"} route={"/about"} text={"About"} />
-                        <RouterNavbarLink eventKey={"projects"} route={"/projects"} text={"Projects"} />
-                        <Nav.Link eventKey="resume"
-                                  active={false}
-                                  className="text-decoration-none mx-2"
-                                  href={resumeLink}
-                                  target="_blank"
-                                  rel="noopener noreferrer"
-                        >
+        <Navbar expand="sm" bg="white" variant="light" role="navigation" className="border-bottom">
+            <Navbar.Brand className="fw-light mx-sm-5 mx-2">
+                {myName}
+            </Navbar.Brand>
+            <Navbar.Toggle className="mx-2" aria-controls="navbarContent">
+                <HiOutlineMenu/>
+            </Navbar.Toggle>
+            <Navbar.Collapse id="navbarContent" className="justify-content-end px-2">
+                <Nav defaultActiveKey="home">
+                    <NavbarLink eventKey={"home"}>
+                        <RouteLink route={"/"} text={"Home"} />
+                    </NavbarLink>
+                    <NavbarLink eventKey={"about"}>
+                        <RouteLink route={"/about"} text={"About"} />
+                    </NavbarLink>
+                    <NavbarLink eventKey={"projects"}>
+                        <RouteLink route={"/projects"} text={"Projects"} />
+                    </NavbarLink>
+                    <NavbarLink eventKey={"resume"}>
+                        <a href={resumeLink} target="_blank" rel="noopener noreferrer" className="top-navbar-link">
                             Resume
-                        </Nav.Link>
-                    </Nav>
-                </Navbar.Collapse>
-            </Col>
+                        </a>
+                    </NavbarLink>
+                </Nav>
+            </Navbar.Collapse>
         </Navbar>
     );
 }
 
-function RouterNavbarLink(props: {eventKey: string, route: string, text: string}) {
+function RouteLink(props: { route: string, text: string }) {
     return (
-        <Nav.Link eventKey={props.eventKey} className="mx-2">
-            <Link to={props.route} className="text-reset text-decoration-none">
-                {props.text}
-            </Link>
-        </Nav.Link>
+        <Link to={props.route} className="top-navbar-link">
+            {props.text}
+        </Link>
     );
+}
+
+interface NavbarLinkProps extends React.PropsWithChildren<any> {
+    eventKey: string,
+}
+
+function NavbarLink(props: NavbarLinkProps) {
+    return (
+        <Nav.Link as={"span"} eventKey={props.eventKey} className="mx-2">
+            {props.children}
+        </Nav.Link>
+    )
 }

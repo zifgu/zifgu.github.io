@@ -29,6 +29,6 @@ export function getSocials(): SocialMedia[] {
 
 export function getSiteSocials(site: string): SocialMedia | undefined {
     return socialMedia.find((value) => {
-        return value.site.localeCompare(site, undefined, {sensitivity: "accent"});
+        return value.site.localeCompare(site, undefined, {sensitivity: "accent"}) === 0;
     });
 }

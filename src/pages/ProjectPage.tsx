@@ -29,11 +29,10 @@ export function ProjectPage() {
                 <ProjectBasicInfo project={project} />
             </SideColumn>
             <MainColumn>
-                <h3 className="border-top border-3 border-primary pt-3">
+                <h3 className="border-top border-2 border-primary pt-3 mb-4">
                     {githubLink}
                     {project.name}
                 </h3>
-                <p className="my-3 fst-italic">{project.summary}</p>
                 {project.discussion}
                 <ProjectLessons lessons={project.lessonsLearned} />
                 <ProjectDemos images={project.images} videos={project.videos}/>

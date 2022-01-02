@@ -4,6 +4,7 @@ import {PropsWithChildren} from "react";
 import {Link} from "react-router-dom";
 import {Badge} from "react-bootstrap";
 import {ProjectInfo} from "../../data/ProjectInfo";
+import "../../css/links.css"
 
 interface ProjectCardProps extends PropsWithChildren<any> {
     project: ProjectInfo,
@@ -15,7 +16,7 @@ export function ProjectCard(props: ProjectCardProps) {
         cardHeaderImage = (
             <Link to={`/projects/${props.project.name}`}>
                 <Card.Img
-                    variant="top"
+                    variant="bottom"
                     src={props.project.headerImageSrc}
                 />
             </Link>
@@ -24,8 +25,7 @@ export function ProjectCard(props: ProjectCardProps) {
 
     return (
         <Col className="p-0">
-            <Card>
-                {cardHeaderImage}
+            <Card className="shadow-sm">
                 <Card.Body>
                     <Card.Title as="h5">
                         <Link
@@ -35,10 +35,11 @@ export function ProjectCard(props: ProjectCardProps) {
                             { props.project.name }
                         </Link>
                     </Card.Title>
-                    <Card.Subtitle as="h6" className="text-secondary mb-3">{ props.project.time }</Card.Subtitle>
+                    <Card.Subtitle as="p" className="text-secondary mb-3">{ props.project.time }</Card.Subtitle>
                     <Card.Text>{ props.project.summary }</Card.Text>
                     <BadgeList items={props.project.technologies} maxLength={4} />
                 </Card.Body>
+                {cardHeaderImage}
             </Card>
         </Col>
     );
@@ -54,7 +55,7 @@ function BadgeList(props: {items: string[], maxLength?: number}) {
 
     const badges = items.map((item) => {
         return (
-            <Badge key={item} pill bg="primary" className="mx-1">
+            <Badge key={item} pill bg="primary" className="mx-1 fw-normal">
                 {item}
             </Badge>
         );

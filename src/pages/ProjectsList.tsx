@@ -20,7 +20,7 @@ export function ProjectsList() {
                 subtitle={"Things I've worked on!"}
             />
             <MainColumn>
-                <Row className="row-cols-1 gy-3">
+                <Row className="row-cols-1 mt-lg-1 gy-3">
                     {projectCardList}
                 </Row>
             </MainColumn>
