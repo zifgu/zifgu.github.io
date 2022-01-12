@@ -1,6 +1,6 @@
 import React from "react";
 import {ProjectTechnologies} from "./ProjectTechnologies";
-import {ProjectInfo} from "../../data/ProjectInfo";
+import { formatProjectTime, ProjectInfo } from "../../data/ProjectInfo";
 
 export function ProjectBasicInfo(props: { project: ProjectInfo }) {
     let courseInfo = null;
@@ -19,7 +19,9 @@ export function ProjectBasicInfo(props: { project: ProjectInfo }) {
 
     return (
         <div className="mt-5 text-dark p-1">
-            <BasicInfoItem description={"Date"}>{props.project.time}</BasicInfoItem>
+            <BasicInfoItem description={"Date"}>
+                {formatProjectTime(props.project)}
+            </BasicInfoItem>
             {courseInfo}
             {teamInfo}
             <BasicInfoItem description={"Technologies"}>

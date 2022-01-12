@@ -2,6 +2,7 @@ import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import React, {ReactElement} from "react";
 import Col from "react-bootstrap/Col";
+import "../../css/layout.css";
 
 interface TwoColumnsProps {
     children: [ReactElement, ReactElement]
@@ -18,7 +19,7 @@ export function TwoColumnPageBody(props: TwoColumnsProps) {
     );
 }
 
-export const sideColumnSize = 3;
+export const sideColumnSize = 4;
 export const mainColumnSize = 8;
 
 interface SideColumnProps extends React.PropsWithChildren<any> {
@@ -29,8 +30,13 @@ interface SideColumnProps extends React.PropsWithChildren<any> {
 export function SideColumn(props: SideColumnProps) {
     return (
         <Col lg={sideColumnSize}>
-            <div className="mt-2 my-lg-5">
+            <div className="mt-2 my-lg-5 pe-lg-5">
                 <h3>{props.title}</h3>
+                {
+                    props.title ?
+                        <hr className="side-column-separator"/>
+                        : null
+                }
                 <p className="fs-6 lead text-muted">
                     {props.subtitle}
                 </p>

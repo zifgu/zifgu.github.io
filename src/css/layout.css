@@ -1,0 +1,6 @@
+hr.side-column-separator {
+    width: 15%;
+    height: 3px;
+    opacity: revert;
+    background-color: #1c76fd;
+}

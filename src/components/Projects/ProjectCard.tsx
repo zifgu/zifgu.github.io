@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import {PropsWithChildren} from "react";
 import {Link} from "react-router-dom";
 import {Badge} from "react-bootstrap";
-import {ProjectInfo} from "../../data/ProjectInfo";
+import { formatProjectTime, ProjectInfo } from "../../data/ProjectInfo";
 import "../../css/links.css"
 
 interface ProjectCardProps extends PropsWithChildren<any> {
@@ -26,7 +26,7 @@ export function ProjectCard(props: ProjectCardProps) {
     return (
         <Col className="p-0">
             <Card className="shadow-sm">
-                <Card.Body>
+                <Card.Body className="border-bottom">
                     <Card.Title as="h5">
                         <Link
                             to={`/projects/${props.project.name}`}
@@ -35,7 +35,9 @@ export function ProjectCard(props: ProjectCardProps) {
                             { props.project.name }
                         </Link>
                     </Card.Title>
-                    <Card.Subtitle as="p" className="text-secondary mb-3">{ props.project.time }</Card.Subtitle>
+                    <Card.Subtitle as="p" className="text-secondary mb-3">
+                        { formatProjectTime(props.project) }
+                    </Card.Subtitle>
                     <Card.Text>{ props.project.summary }</Card.Text>
                     <BadgeList items={props.project.technologies} maxLength={4} />
                 </Card.Body>

@@ -1,15 +1,18 @@
 import {ProjectInfo} from "./ProjectInfo";
-import TransductionHeading from "./images/transductionHeading.png";
+import TransductionHeading from "./images/TransductionHeading.png";
+import FanworksSiteHeading from "./images/FanworksSiteHeading.png";
+import TimetableCalculatorHeading from "./images/TimetableCalculatorHeading.png";
+import PersonalWebsiteHeading from "./images/PersonalWebsiteHeading.png";
+import CodenamesSingleplayerHeading from "./images/CodenamesSingleplayerHeading.png";
 
 const projects: ProjectInfo[] = [
     {
         name: "Personal website",
-        time: "December 2021",
-        course: "some course",
+        start: new Date(2021, 11),
         githubUrl: "https://github.com/zifgu/zifgu.github.io",
-        technologies: ["React", "Bootstrap", "TypeScript", "HTML/CSS", "GitHub Pages"],
+        technologies: ["React", "TypeScript", "Bootstrap", "HTML/CSS", "GitHub Pages"],
         summary: "My personal website.",
-        headerImageSrc: "https://reactjs.org/logo-og.png",
+        headerImageSrc: PersonalWebsiteHeading,
         discussion: (
             <p>
                 Mauris scelerisque sagittis nibh, a rhoncus risus tempor nec. Morbi pellentesque gravida ligula, id
@@ -38,25 +41,49 @@ const projects: ProjectInfo[] = [
             </p>
         ),
         lessonsLearned: ["How to deploy to GitHub pages using gh-pages", "How to use React Router"],
-        videos: [
-            {
-                videoSrc: "https://www.youtube.com/embed/Tn6-PIqc4UM",
-                caption: (<b>Bold caption!</b>),
-            }
-        ],
-        images: [
-            {
-                imageSrc: "https://images.pexels.com/photos/417074/pexels-photo-417074.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
-                caption: "Free images!",
-            },
-        ],
+        videos: [],
+        images: [],
+    },
+    {
+        name: "Fanworks site",
+        start: new Date(2021, 4),
+        finished: new Date(2021, 5),
+        course: "CPSC 304: Introduction to Relational Databases",
+        technologies: ["Java", "SQL", "Oracle Database", "Apache Tomcat", "Java Servlet", "JSP", "HTML/CSS"],
+        summary: "A Java web application that hosts fan stories and artworks using a database.",
+        headerImageSrc: FanworksSiteHeading,
+        team: 3,
+    },
+    {
+        name: "Timetable generator",
+        start: new Date(2020, 8),
+        finished: new Date(2020, 11),
+        technologies: ["Java"],
+        course: "CPSC 210: Software Construction",
+        summary: "A Java desktop application to help students automatically arrange their course timetables.",
+        headerImageSrc: TimetableCalculatorHeading,
+    },
+    {
+        name: "Software development for ...",
+        start: new Date(2021, 8),
+        finished: "present",
+        technologies: [],
+        summary: "",
+    },
+    {
+        name: "Codenames app",
+        start: new Date(2021, 11),
+        technologies: ["React", "TypeScript", "Bootstrap", "HTML/CSS"],
+        summary: "A single page React app for playing the popular party game Codenames.",
+        headerImageSrc: CodenamesSingleplayerHeading,
     },
     {
         name: "Transduction",
-        time: "October 2020 – August 2021",
+        start: new Date(2020, 9),
+        finished: new Date(2021, 7),
         technologies: ["Unity", "C#"],
+        summary: "A first-person 3D puzzle game for two players, made as part of the UBC Game Development Club.",
         team: 11,
-        summary: "A game.",
         discussion: (
             <><p>
                 Mauris scelerisque sagittis nibh, a rhoncus risus tempor nec. Morbi pellentesque gravida ligula, id

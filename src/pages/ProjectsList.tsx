@@ -7,7 +7,12 @@ import {MainColumn, SideColumn, TwoColumnPageBody} from "../components/Layout/Tw
 export function ProjectsList() {
     const projects = getAllProjects();
 
-    const projectCardList = projects.map((project) => {
+    // Sort in increasing order of start date
+    const sortedProjects = projects.sort((proj1, proj2) => {
+        return proj2.start.getTime() - proj1.start.getTime();
+    });
+
+    const projectCardList = sortedProjects.map((project) => {
         return (
             <ProjectCard project={project} key={project.name}/>
         );
