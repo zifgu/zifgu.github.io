@@ -1,16 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.1c2378d3.css",
-    "main.js": "/static/js/main.90179034.js",
+    "main.css": "/static/css/main.98c29984.css",
+    "main.js": "/static/js/main.a8d3a10e.js",
     "static/js/787.3058b895.chunk.js": "/static/js/787.3058b895.chunk.js",
-    "static/media/transductionHeading.png": "/static/media/transductionHeading.b48475c8ee37188ff0bd.png",
+    "static/media/TransductionHeading.png": "/static/media/TransductionHeading.001763a7d2b5c32555d3.png",
+    "static/media/CodenamesSingleplayerHeading.png": "/static/media/CodenamesSingleplayerHeading.d17a32ed56d43d57a6ad.png",
+    "static/media/PersonalWebsiteHeading.png": "/static/media/PersonalWebsiteHeading.25fca1fe9b544dd4d5f8.png",
+    "static/media/FanworksSiteHeading.png": "/static/media/FanworksSiteHeading.ec06440be57de478a571.png",
+    "static/media/TimetableCalculatorHeading.png": "/static/media/TimetableCalculatorHeading.829bbeb2fd2ec4cf906b.png",
     "index.html": "/index.html",
-    "main.1c2378d3.css.map": "/static/css/main.1c2378d3.css.map",
-    "main.90179034.js.map": "/static/js/main.90179034.js.map",
+    "main.98c29984.css.map": "/static/css/main.98c29984.css.map",
+    "main.a8d3a10e.js.map": "/static/js/main.a8d3a10e.js.map",
     "787.3058b895.chunk.js.map": "/static/js/787.3058b895.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.1c2378d3.css",
-    "static/js/main.90179034.js"
+    "static/css/main.98c29984.css",
+    "static/js/main.a8d3a10e.js"
   ]
 }
