@@ -10,7 +10,7 @@ export function ProjectGithubLink(props: {githubUrl: string}) {
                target="_blank"
                rel="noopener noreferrer"
             >
-                <FaGithub size={25}/>
+                <FaGithub size={30}/>
             </a>
         </span>
     );

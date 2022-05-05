@@ -7,6 +7,7 @@ import {ProjectGithubLink} from "../components/Projects/ProjectGithubLink";
 import {MainColumn, SideColumn, TwoColumnPageBody} from "../components/Layout/TwoColumnPageBody";
 import {IoChevronBack} from "react-icons/io5";
 import {ProjectBasicInfo} from "../components/Projects/ProjectBasicInfo";
+import { PageSubheading } from "../components/PageSubheading";
 
 export function ProjectPage() {
     const params = useParams();
@@ -17,6 +18,13 @@ export function ProjectPage() {
     }
 
     const githubLink = project.githubUrl ? <ProjectGithubLink githubUrl={project.githubUrl}/> : null;
+
+    const discussion = project.discussion ? (
+        <>
+            <PageSubheading>Discussion</PageSubheading>
+            {project.discussion}
+        </>
+    ): null;
 
     return (
         <TwoColumnPageBody>
@@ -33,7 +41,7 @@ export function ProjectPage() {
                     {githubLink}
                     {project.name}
                 </h3>
-                {project.discussion}
+                {discussion}
                 <ProjectLessons lessons={project.lessonsLearned} />
                 <ProjectDemos images={project.images} videos={project.videos}/>
             </MainColumn>

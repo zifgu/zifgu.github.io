@@ -19,7 +19,7 @@ export function TwoColumnPageBody(props: TwoColumnsProps) {
     );
 }
 
-export const sideColumnSize = 4;
+export const sideColumnSize = 3;
 export const mainColumnSize = 8;
 
 interface SideColumnProps extends React.PropsWithChildren<any> {

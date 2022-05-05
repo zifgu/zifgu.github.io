@@ -2,6 +2,7 @@ import React from "react";
 import {SocialMediaList} from "../components/SocialMediaList";
 import {MainColumn, SideColumn, TwoColumnPageBody} from "../components/Layout/TwoColumnPageBody";
 import {myHeadline, myName} from "../data/basic-info";
+import { Link } from "react-router-dom";
 
 export function HomePage() {
     return (
@@ -11,16 +12,15 @@ export function HomePage() {
                 <SocialMediaList />
             </SideColumn>
             <MainColumn>
-                <div className="mt-4"/>
-                <h5>Welcome to my website!</h5>
+                <h5 className="my-4">Welcome to my website!</h5>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat sed cras ornare arcu dui vivamus arcu felis. In hac habitasse platea dictumst quisque sagittis purus. Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor. Auctor eu augue ut lectus arcu.
+                    I am a third-year student in the Computer Science Honours program at the University of British Columbia, graduating in May 2023.
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat sed cras ornare arcu dui vivamus arcu felis. In hac habitasse platea dictumst quisque sagittis purus. Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor. Auctor eu augue ut lectus arcu.
+                    This website was created from scratch with React TypeScript! Please note that some pages are currently under development.
                 </p>
                 <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Volutpat sed cras ornare arcu dui vivamus arcu felis. In hac habitasse platea dictumst quisque sagittis purus. Lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor. Auctor eu augue ut lectus arcu.
+                    In the meantime, please feel free to take a look at my programming <Link to={"/projects"} className="text-decoration-none">projects</Link>.
                 </p>
             </MainColumn>
         </TwoColumnPageBody>

@@ -4,3 +4,7 @@ hr.side-column-separator {
     opacity: revert;
     background-color: #1c76fd;
 }
+
+a {
+    text-decoration: none;
+}

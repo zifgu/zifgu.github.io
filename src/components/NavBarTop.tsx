@@ -16,17 +16,17 @@ export function NavBarTop() {
                 <HiOutlineMenu/>
             </Navbar.Toggle>
             <Navbar.Collapse id="navbarContent" className="justify-content-end px-2">
-                <Nav defaultActiveKey="home">
-                    <NavbarLink eventKey={"home"}>
-                        <RouteLink route={"/"} text={"Home"} />
+                <Nav>
+                    <NavbarLink eventKey="home">
+                        <RouteLink route="/" text="Home" />
                     </NavbarLink>
-                    <NavbarLink eventKey={"about"}>
-                        <RouteLink route={"/about"} text={"About"} />
+                    {/*<NavbarLink eventKey={"about"}>*/}
+                    {/*    <RouteLink route={"/about"} text={"About"} />*/}
+                    {/*</NavbarLink>*/}
+                    <NavbarLink eventKey="projects">
+                        <RouteLink route="/projects" text="Projects" />
                     </NavbarLink>
-                    <NavbarLink eventKey={"projects"}>
-                        <RouteLink route={"/projects"} text={"Projects"} />
-                    </NavbarLink>
-                    <NavbarLink eventKey={"resume"}>
+                    <NavbarLink eventKey="resume">
                         <a href={resumeLink} target="_blank" rel="noopener noreferrer" className="top-navbar-link">
                             Resume
                         </a>
@@ -51,8 +51,8 @@ interface NavbarLinkProps extends React.PropsWithChildren<any> {
 
 function NavbarLink(props: NavbarLinkProps) {
     return (
-        <Nav.Link as={"span"} eventKey={props.eventKey} className="mx-2">
+        <Nav.Item as="span" className="mx-2">
             {props.children}
-        </Nav.Link>
+        </Nav.Item>
     )
 }
