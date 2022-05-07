@@ -1,0 +1,29 @@
+.nav__title {
+    font-size: 1.25rem;
+}
+
+.nav__link {
+    color: var(--text-color);
+    opacity: 70%;
+    text-decoration: none;
+}
+
+.nav__link:hover {
+    color: var(--text-color);
+    opacity: 100%;
+}
+
+.nav__icon-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5em;
+    border-radius: 5px;
+}
+
+.dark-mode-btn:hover {
+    background-color: rgba(151, 141, 246, 0.43);
+}
+
+.light-mode-btn:hover {
+    background-color: rgba(142, 245, 229, 0.51);
+}

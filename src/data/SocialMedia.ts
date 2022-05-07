@@ -1,8 +1,8 @@
-import {ReactElement} from "react";
+import { IconType } from "react-icons";
 
 export interface SocialMedia {
     site: string,
-    icon: ReactElement,
+    icon: IconType,
     link: string,
     contactName: string,
 }

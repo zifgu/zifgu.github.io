@@ -1,0 +1,10 @@
+.about__image {
+    /* Center the image horizontally */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    /* TODO: box shadow in dark mode */
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+    border-radius: .25rem;
+}

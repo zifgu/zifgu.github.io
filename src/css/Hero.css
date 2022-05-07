@@ -1,0 +1,29 @@
+.hero {
+    background-color: black;
+    color: white;
+}
+
+.hero__text {
+    position: relative;
+    top: 40%;
+}
+
+.hero__icon-container {
+    justify-content: end;
+}
+
+.hero__icon-wrapper {
+    padding: 0.75em;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ee9bec, #79d7d0);
+    opacity: 60%;
+}
+
+.hero__icon-wrapper:hover {
+    opacity: 100%;
+}
+
+.hero__icon {
+    fill: black;
+    stroke: black;
+}

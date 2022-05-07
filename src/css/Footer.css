@@ -1,0 +1,16 @@
+.footer {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-top: 1px solid var(--text-muted-color);
+    text-align: center;
+}
+
+.footer__acknowledgments {
+    font-family: var(--accent-font);
+    opacity: 75%;
+}
+
+.footer__icon-container {
+    justify-content: center;
+    gap: 1.5rem;
+}

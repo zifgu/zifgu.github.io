@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Inter");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+
+/* || GENERAL */
+
+/* todo: fix the variable names */
+body {
+    --text-font: "Inter", var(--bs-body-font-family);
+    --accent-font: "Roboto Mono", var(--bs-body-font-family);
+
+    --bg-color: #FDFDFC;
+    --text-color: #0F0E18;
+    --text-muted-color: #AAACA5;
+    --badge-gradient: linear-gradient(90deg, #88AB96, #9FDDD9);
+    --link-color: #598C51;
+    --link-hover-color: #88C6A4;
+}
+
+body.dark {
+    --bg-color: #181621;
+    --text-color: #eeeded;
+    --text-muted-color: #AAACA5;
+    --badge-gradient: linear-gradient(90deg, #88AB96, #9FDDD9);
+    --link-color: #88C6A4;
+    --link-hover-color: #598C51;
+}
+
+body {
+    font-family: var(--text-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6, .heading {
+    font-family: var(--accent-font);
+    font-weight: bold;
+}
+
+a {
+    color: var(--link-color);
+}
+
+a:hover, .link:hover {
+    color: var(--link-hover-color);
+    text-decoration: none;
+}
+
+code {
+    font-size: initial;
+}
+
+figcaption {
+    font-size: 0.9em;
+    padding: 0 0.5rem;
+    opacity: 80%;
+}
+
+/* || UTILITIES */
+
+.icon-container {
+    display: flex;
+    gap: 1rem;
+}
