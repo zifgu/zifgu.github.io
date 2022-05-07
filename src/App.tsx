@@ -6,6 +6,7 @@ import { MainPage } from "./pages/MainPage";
 import { Layout } from "./pages/Layout";
 
 function App() {
+    // TODO: scroll restoration
     return (
         <HashRouter>
             <Routes>
