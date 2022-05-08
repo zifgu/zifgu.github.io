@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import { HashLink } from 'react-router-hash-link';
 import { resumeLink } from "../data/BasicInfo";
 import { IoMoon, IoSunny } from "react-icons/io5";
+import { FiMenu } from "react-icons/fi";
 import "../css/Navigation.css";
 
 function ToggleModeButton() {
@@ -47,31 +48,37 @@ function IconButton(props: {className: string, icon: ReactElement, onClick: () =
 }
 
 export function NavBar() {
+    // TODO: ideally, dark mode toggle should be outside navbar when collapsed
     return (
-        <Navbar className="nav">
+        <Navbar className="nav" expand="md">
             <span className="nav__title">Title</span>
-            <Nav className="ms-auto align-items-center gap-3">
-                <Nav.Item>
-                    <HashLink className="nav__link" to="/#top">Home</HashLink>
-                </Nav.Item>
-                <Nav.Item>
-                    <HashLink className="nav__link" to="/#about">About</HashLink>
-                </Nav.Item>
-                <Nav.Item>
-                    <HashLink className="nav__link" to="/#projects">Projects</HashLink>
-                </Nav.Item>
-                <Nav.Item>
-                    <a
-                        href={resumeLink} target="_blank" rel="noreferrer"
-                        className="nav__link"
-                    >
-                        Resume
-                    </a>
-                </Nav.Item>
-                <Nav.Item>
-                    <ToggleModeButton />
-                </Nav.Item>
-            </Nav>
+            <Navbar.Toggle aria-controls="navbar-nav">
+                <FiMenu size={20}/>
+            </Navbar.Toggle>
+            <Navbar.Collapse id="navbar-nav">
+                <Nav className="ms-auto align-items-center gap-3">
+                    <Nav.Item>
+                        <HashLink className="nav__link" to="/#top">Home</HashLink>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <HashLink className="nav__link" to="/#about">About</HashLink>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <HashLink className="nav__link" to="/#projects">Projects</HashLink>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <a
+                            href={resumeLink} target="_blank" rel="noreferrer"
+                            className="nav__link"
+                        >
+                            Resume
+                        </a>
+                    </Nav.Item>
+                    <Nav.Item>
+                        <ToggleModeButton />
+                    </Nav.Item>
+                </Nav>
+            </Navbar.Collapse>
         </Navbar>
     );
 }
