@@ -5,6 +5,7 @@ import "../css/Global.css";
 import "../css/Hero.css";
 import { getSocials } from "../data/Contact";
 import { SocialMedia } from "../data/SocialMedia";
+import { ParticleTest } from "./ParticleTest";
 
 // TODO: figure out how to enforce types on polymorphic components
 function HeroIcon({as, link, ...props}: any) {
@@ -45,6 +46,9 @@ export function Hero() {
                     }
                 </div>
             </Col>
+            <div className="hero__canvas-container">
+                <ParticleTest/>
+            </div>
         </Row>
     );
 }

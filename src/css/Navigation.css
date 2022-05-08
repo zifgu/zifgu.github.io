@@ -1,3 +1,8 @@
+.nav {
+    position: sticky;
+    top: 0;
+}
+
 .nav__title {
     font-size: 1.25rem;
 }

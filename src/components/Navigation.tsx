@@ -48,7 +48,7 @@ function IconButton(props: {className: string, icon: ReactElement, onClick: () =
 
 export function NavBar() {
     return (
-        <Navbar sticky="top">
+        <Navbar className="nav">
             <span className="nav__title">Title</span>
             <Nav className="ms-auto align-items-center gap-3">
                 <Nav.Item>
