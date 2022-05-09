@@ -3,6 +3,7 @@ import React, { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { Bloom, EffectComposer } from "@react-three/postprocessing";
 import { MeshWobbleMaterial } from "@react-three/drei";
+import { useInView } from "react-intersection-observer";
 
 /*
 Particle code is modified from:
@@ -108,8 +109,11 @@ function Postprocessing() {
 }
 
 export function ParticleTest() {
+    const {ref, inView} = useInView();
+
     return (
         <Canvas
+            ref={ref}
             camera={{position: [0, 0, 50]}}
             gl={{
                 powerPreference: "high-performance",
@@ -118,6 +122,7 @@ export function ParticleTest() {
                 stencil: false,
                 depth: false,
             }}
+            frameloop={inView ? "always" : "never"}
         >
             <color attach="background" args={["#181621"]} />
             <AmbientLight />
