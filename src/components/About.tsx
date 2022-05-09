@@ -1,14 +1,20 @@
-import React, { useState } from "react";
+import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import "../css/Global.css";
 import "../css/About.css";
-import { InView } from "react-intersection-observer";
 import { animated, useSpring } from "react-spring";
+import { AnimateWhenReached } from "./Animation";
 
 // todo: what is the type of this prop?
-function AboutContent(props: {textAnimatedStyles: any}) {
+function AboutContent({reached}: {reached: boolean}) {
+    const styles = useSpring({
+        transform: reached ? "translateY(0)" : "translateY(15%)",
+        opacity: reached ? 1 : 0,
+        delay: 0,
+    });
+
     return (
         <Row id="about" className="py-5 px-2 px-md-5 justify-content-evenly align-items-center">
             <Col md={4}>
@@ -18,7 +24,7 @@ function AboutContent(props: {textAnimatedStyles: any}) {
                     className="about__image"
                 />
             </Col>
-            <animated.div className="col-md-6 py-5 py-md-0" style={props.textAnimatedStyles}>
+            <animated.div className="col-md-6 py-5 py-md-0" style={styles}>
                 <h4 className="my-3">
                     About
                 </h4>
@@ -45,20 +51,13 @@ function AboutContent(props: {textAnimatedStyles: any}) {
 }
 
 export function About() {
-    const [reached, setReached] = useState(false);
-    const styles = useSpring({
-        transform: reached ? "translateY(0)" : "translateY(20%)",
-        opacity: reached ? 1 : 0,
-        delay: 0,
-    });
-
     return (
-        <InView threshold={0.4} onChange={(inView) => {
-            if (inView) {
-                setReached(true);
+        <AnimateWhenReached threshold={0.4}>
+            {
+                (reached: boolean) => {
+                    return <AboutContent reached={reached} />;
+                }
             }
-        }}>
-            <AboutContent textAnimatedStyles={styles} />
-        </InView>
+        </AnimateWhenReached>
     );
 }
