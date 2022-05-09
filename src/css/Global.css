@@ -3,13 +3,21 @@
 
 /* || GENERAL */
 
+:root {
+    --light-bg: #FDFDFC;
+    --light-text: #0F0E18;
+
+    --dark-bg: #181621;
+    --dark-text: #eeeded;
+}
+
 /* todo: fix the variable names */
 body {
     --text-font: "Inter", var(--bs-body-font-family);
     --accent-font: "Roboto Mono", var(--bs-body-font-family);
 
-    --bg-color: #FDFDFC;
-    --text-color: #0F0E18;
+    --bg-color: var(--light-bg);
+    --text-color: var(--light-text);
     --text-muted-color: #AAACA5;
     --badge-gradient: linear-gradient(90deg, #88AB96, #9FDDD9);
     --link-color: #598C51;
@@ -17,8 +25,8 @@ body {
 }
 
 body.dark {
-    --bg-color: #181621;
-    --text-color: #eeeded;
+    --bg-color: var(--dark-bg);
+    --text-color: var(--dark-text);
     --text-muted-color: #AAACA5;
     --badge-gradient: linear-gradient(90deg, #88AB96, #9FDDD9);
     --link-color: #88C6A4;
