@@ -5,6 +5,6 @@
     margin-right: auto;
 
     /* TODO: box shadow in dark mode */
-    box-shadow: 0 1rem 25px rgb(0 0 0 / 10%), 0 50px 60px rgb(0 0 0 / 10%);
+    box-shadow: 0 16px 20px -4px rgb(0 0 0 / 10%), 0 40px 50px rgb(0 0 0 / 10%);
     border-radius: .25rem;
 }
