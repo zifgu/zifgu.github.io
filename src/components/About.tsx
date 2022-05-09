@@ -1,11 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import "../css/Global.css";
 import "../css/About.css";
+import { InView } from "react-intersection-observer";
+import { animated, useSpring } from "react-spring";
 
-export function About() {
+// todo: what is the type of this prop?
+function AboutContent(props: {textAnimatedStyles: any}) {
     return (
         <Row id="about" className="py-5 px-2 px-md-5 justify-content-evenly align-items-center">
             <Col md={4}>
@@ -15,7 +18,7 @@ export function About() {
                     className="about__image"
                 />
             </Col>
-            <Col md={6} className="py-5 py-md-0">
+            <animated.div className="col-md-6 py-5 py-md-0" style={props.textAnimatedStyles}>
                 <h4 className="my-3">
                     About
                 </h4>
@@ -36,7 +39,26 @@ export function About() {
                     dignissim sodales ut eu sem integer vitae justo eget. Volutpat diam ut venenatis tellus in metus
                     vulputate eu.
                 </p>
-            </Col>
+            </animated.div>
         </Row>
+    );
+}
+
+export function About() {
+    const [reached, setReached] = useState(false);
+    const styles = useSpring({
+        transform: reached ? "translateY(0)" : "translateY(20%)",
+        opacity: reached ? 1 : 0,
+        delay: 0,
+    });
+
+    return (
+        <InView threshold={0.4} onChange={(inView) => {
+            if (inView) {
+                setReached(true);
+            }
+        }}>
+            <AboutContent textAnimatedStyles={styles} />
+        </InView>
     );
 }
