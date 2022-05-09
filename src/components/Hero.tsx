@@ -12,9 +12,11 @@ function HeroIcon({as, link, ...props}: any) {
     const Component = as;
 
     return (
-        <a href={link} target="_blank" rel="noreferrer" className="hero__icon-wrapper">
-            <Component className="hero__icon" {...props}/>
-        </a>
+        <div className="hero__icon-wrapper">
+            <a href={link} target="_blank" rel="noreferrer">
+                <Component className="hero__icon" {...props}/>
+            </a>
+        </div>
     );
 }
 
