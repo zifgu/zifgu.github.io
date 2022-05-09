@@ -6,7 +6,6 @@ import { resumeLink } from "../data/BasicInfo";
 import { IoMoon, IoSunny } from "react-icons/io5";
 import { FiMenu } from "react-icons/fi";
 import "../css/Navigation.css";
-import { animated, useSpring } from "react-spring";
 
 function ToggleModeButton() {
     // false means light, true means dark
@@ -49,16 +48,9 @@ function IconButton(props: {className: string, icon: ReactElement, onClick: () =
 }
 
 function NavItem(props: PropsWithChildren<any>) {
-    const [hover, setHover] = useState(false);
-    const style = useSpring({
-        transform: hover ? "translateX(0)" : "translateX(-100%)",
-        opacity: hover ? 1 : 0,
-    });
-
     return (
-        <Nav.Item className="overflow-hidden" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+        <Nav.Item className="overflow-hidden">
             {props.children}
-            <animated.div className="nav__link-underline" style={style} />
         </Nav.Item>
     );
 }
