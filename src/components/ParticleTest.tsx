@@ -67,7 +67,6 @@ function Particles() {
                 const a = Math.cos(t) + Math.sin(t * 1) / 10;
                 const b = Math.sin(t) + Math.cos(t * 1) / 10;
 
-                // TODO: mouse position isn't being detected
                 particle.mx += (state.mouse.x * 100 - particle.mx) * 0.01;
                 particle.my += (state.mouse.y * 100 - particle.my) * 0.01;
 
