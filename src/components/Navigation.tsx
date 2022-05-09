@@ -51,12 +51,12 @@ function IconButton(props: {className: string, icon: ReactElement, onClick: () =
 function NavItem(props: PropsWithChildren<any>) {
     const [hover, setHover] = useState(false);
     const style = useSpring({
-        width: hover ? "100%" : "0%",
+        transform: hover ? "translateX(0)" : "translateX(-100%)",
         opacity: hover ? 1 : 0,
     });
 
     return (
-        <Nav.Item onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+        <Nav.Item className="overflow-hidden" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
             {props.children}
             <animated.div className="nav__link-underline" style={style} />
         </Nav.Item>
