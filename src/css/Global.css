@@ -38,6 +38,7 @@ h1, h2, h3, h4, h5, h6, .heading {
 
 a {
     color: var(--link-color);
+    transition: color 150ms ease-out;
 }
 
 a:hover, .link:hover {

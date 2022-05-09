@@ -2,10 +2,11 @@ import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Badge from "react-bootstrap/Badge";
-import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom";
 import { formatProjectTime, getAllProjects, ProjectInfo } from "../data/ProjectInfo";
 import "../css/Projects.css";
+import { animated, useSpring } from "react-spring";
+import { AnimateWhenHovered, AnimateWhenReached } from "./Animation";
 
 export function Projects() {
     return (
@@ -37,33 +38,66 @@ export function Projects() {
 function ProjectCard(props: {project: ProjectInfo, index: number}) {
     return (
         <div className="project-card">
-            <Image src="https://via.placeholder.com/500x280" className="project-card__image"/>
-            <div className="pt-3">
-                <div className="d-flex justify-content-between">
-                    <div className="text-start project-card__details">
-                        {props.project.affiliation}
-                    </div>
-                    <div className="text-end project-card__details">
-                        {formatProjectTime(props.project)}
-                    </div>
+            <AnimateWhenHovered>
+                {
+                    (hover: boolean) => <ProjectCardImage hover={hover}/>
+                }
+            </AnimateWhenHovered>
+            <AnimateWhenReached threshold={0.4}>
+                {
+                    (reached: boolean) => <ProjectCardBody project={props.project} index={props.index} reached={reached} />
+                }
+            </AnimateWhenReached>
+        </div>
+    );
+}
+
+function ProjectCardImage(props: {hover: boolean}) {
+    const style = useSpring({
+        transform: props.hover ? "scale(0.925)" : "scale(1)",
+    });
+
+    return (
+        <animated.img
+            src="https://via.placeholder.com/500x280"
+            className="img-fluid project-card__image"
+            style={style}
+        />
+    );
+}
+
+function ProjectCardBody(props: {project: ProjectInfo, index: number, reached: boolean}) {
+    const bodySpring = useSpring({
+        transform: props.reached ? "translateY(0)" : "translateY(20%)",
+        opacity: props.reached ? 1 : 0,
+    });
+
+    return (
+        <animated.div className="pt-3" style={bodySpring}>
+            <div className="d-flex justify-content-between">
+                <div className="text-start project-card__details">
+                    {props.project.affiliation}
                 </div>
-                <h5>
-                    <Link to={`/projects/${props.project.name}`} className="project-card__title">
-                        {props.project.name}
-                    </Link>
-                </h5>
-                <p className="my-4">
-                    {props.project.summary}
-                </p>
-                <div className="d-flex flex-wrap gap-2">
-                    {
-                        props.project.technologies.map((technology: string) => (
-                            <TechnologyBadge key={technology} technology={technology}/>
-                        ))
-                    }
+                <div className="text-end project-card__details">
+                    {formatProjectTime(props.project)}
                 </div>
             </div>
-        </div>
+            <h5>
+                <Link to={`/projects/${props.project.name}`} className="project-card__title">
+                    {props.project.name}
+                </Link>
+            </h5>
+            <p className="my-4">
+                {props.project.summary}
+            </p>
+            <div className="d-flex flex-wrap gap-2">
+                {
+                    props.project.technologies.map((technology: string) => (
+                        <TechnologyBadge key={technology} technology={technology}/>
+                    ))
+                }
+            </div>
+        </animated.div>
     );
 }
 
