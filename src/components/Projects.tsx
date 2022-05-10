@@ -36,37 +36,48 @@ export function Projects() {
 }
 
 function ProjectCard(props: {project: ProjectInfo, index: number}) {
+    const projectLink = `/projects/${props.project.name}`;
+
     return (
         <div className="project-card">
             <AnimateWhenHovered>
                 {
-                    (hover: boolean) => <ProjectCardImage hover={hover}/>
+                    (hover: boolean) => <ProjectCardImage hover={hover} link={projectLink}/>
                 }
             </AnimateWhenHovered>
             <AnimateWhenReached threshold={0.4}>
                 {
-                    (reached: boolean) => <ProjectCardBody project={props.project} index={props.index} reached={reached} />
+                    (reached: boolean) => (
+                        <ProjectCardBody
+                            project={props.project}
+                            index={props.index}
+                            link={projectLink}
+                            reached={reached}
+                        />
+                    )
                 }
             </AnimateWhenReached>
         </div>
     );
 }
 
-function ProjectCardImage(props: {hover: boolean}) {
+function ProjectCardImage(props: {hover: boolean, link: string}) {
     const style = useSpring({
         transform: props.hover ? "scale(0.925)" : "scale(1)",
     });
 
     return (
-        <animated.img
-            src="https://via.placeholder.com/500x280"
-            className="img-fluid project-card__image"
-            style={style}
-        />
+        <Link to={props.link}>
+            <animated.img
+                src="https://via.placeholder.com/500x280"
+                className="img-fluid project-card__image"
+                style={style}
+            />
+        </Link>
     );
 }
 
-function ProjectCardBody(props: {project: ProjectInfo, index: number, reached: boolean}) {
+function ProjectCardBody(props: {project: ProjectInfo, link: string, index: number, reached: boolean}) {
     const bodySpring = useSpring({
         transform: props.reached ? "translateY(0)" : "translateY(20%)",
         opacity: props.reached ? 1 : 0,
@@ -83,7 +94,7 @@ function ProjectCardBody(props: {project: ProjectInfo, index: number, reached: b
                 </div>
             </div>
             <h5>
-                <Link to={`/projects/${props.project.name}`} className="project-card__title">
+                <Link to={props.link} className="project-card__title">
                     {props.project.name}
                 </Link>
             </h5>
