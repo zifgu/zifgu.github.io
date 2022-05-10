@@ -3,6 +3,7 @@ import * as THREE from "three";
 import { SimplexNoise } from "three/examples/jsm/math/SimplexNoise";
 import { degToRad } from "three/src/math/MathUtils";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { useInView } from "react-intersection-observer";
 
 /*
 Based off of: https://codepen.io/soju22/full/PLeLwo
@@ -101,6 +102,8 @@ export function WaveTest() {
     const fov = 75;
     const cameraZ = 75;
 
+    const {ref, inView} = useInView();
+
     const animationParams: AnimationParams = {
         xFactor: 50,
         yFactor: 20,
@@ -110,10 +113,12 @@ export function WaveTest() {
 
     return (
         <Canvas
+            ref={ref}
             camera={{
                 position: [0, 0, cameraZ],
                 fov: fov,
             }}
+            frameloop={inView ? "always" : "never"}
         >
             <Lights />
             <WaveAnimation yPos={-25} cameraZ={cameraZ} animationParams={animationParams}/>
