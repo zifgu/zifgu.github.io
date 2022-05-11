@@ -93,7 +93,7 @@ function WaveAnimation({yPos, cameraZ, animationParams}: {yPos: number, cameraZ:
     return (
         <mesh position-y={yPos} rotation-x={-Math.PI / 2}>
             <planeBufferGeometry args={[planeWidth, planeLength, planeWidth / 2, planeLength / 2]} ref={bufferGeometryRef} />
-            <meshLambertMaterial color={"#ffffff"} side={THREE.DoubleSide}/>
+            <meshPhongMaterial color={"#ffffff"} side={THREE.DoubleSide}/>
         </mesh>
     );
 }
@@ -105,10 +105,10 @@ export function WaveTest() {
     const {ref, inView} = useInView();
 
     const animationParams: AnimationParams = {
-        xFactor: 50,
+        xFactor: 60,
         yFactor: 20,
         zFactor: 6,
-        timeFactor: 0.3,
+        timeFactor: 0.15,
     };
 
     return (
