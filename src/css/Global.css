@@ -43,8 +43,12 @@ h1, h2, h3, h4, h5, h6, .heading {
     font-weight: bold;
 }
 
-a, .link {
+a {
     color: var(--link-color);
+}
+
+/* Separate these rules because table of contents links use the .link class, but we don't want them to have the default colour */
+a, .link {
     transition: color 150ms ease-out;
 }
 

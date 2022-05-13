@@ -5,6 +5,7 @@ import TimetableCalculatorHeading from "./images/heading/TimetableCalculatorHead
 import PersonalWebsiteHeading from "./images/heading/PersonalWebsiteHeading.png";
 import CodenamesSingleplayerHeading from "./images/heading/CodenamesSingleplayerHeading.png";
 import OERGeomaticsHeading from "./images/heading/OERGeomaticsHeading.png";
+import testMarkdown from "../data/testMarkdown.md";
 
 export interface LinkInfo {
     name: string,
@@ -18,6 +19,7 @@ export interface ProjectInfo {
     finished?: Date | "present",
     summary: ReactNode,
     links: LinkInfo[],
+    markdown: string,
     headerImageSrc?: string,
     technologies: string[],
 }
@@ -60,6 +62,7 @@ const projects: ProjectInfo[] = [
         headerImageSrc: PersonalWebsiteHeading,
         summary: "The website you're on!",
         technologies: ["React", "TypeScript", "Bootstrap", "HTML/CSS", "GitHub Pages"],
+        markdown: testMarkdown,
     },
     {
         name: "Codenames App",
@@ -70,6 +73,7 @@ const projects: ProjectInfo[] = [
         headerImageSrc: CodenamesSingleplayerHeading,
         summary: "A single page React app for playing the popular word-guessing game Codenames.",
         technologies: ["React", "TypeScript", "Bootstrap", "HTML/CSS"],
+        markdown: testMarkdown,
     },
     {
         name: "Fanworks Site",
@@ -80,6 +84,7 @@ const projects: ProjectInfo[] = [
         headerImageSrc: FanworksSiteHeading,
         summary: "A Java web application for sharing and reading fanworks, similar to Archive of Our Own.",
         technologies: ["Java", "SQL", "Oracle Database", "HTML/CSS"],
+        markdown: testMarkdown,
     },
     {
         name: "Timetable Generator",
@@ -90,6 +95,7 @@ const projects: ProjectInfo[] = [
         headerImageSrc: TimetableCalculatorHeading,
         summary: "A Java desktop application to help students automatically create their course timetables.",
         technologies: ["Java", "Swing"],
+        markdown: testMarkdown,
     },
     {
         name: "OER Geomatics project",
@@ -102,6 +108,7 @@ const projects: ProjectInfo[] = [
             An open source interactive 3D visualization for teaching geomatics students about three different models of Earth.
         </>,
         headerImageSrc: OERGeomaticsHeading,
+        markdown: testMarkdown,
     },
     {
         name: "Transduction",
@@ -112,6 +119,7 @@ const projects: ProjectInfo[] = [
         summary: "A first-person 3D puzzle game for two players, made as part of the UBC Game Development Club.",
         technologies: ["Unity", "C#"],
         headerImageSrc: TransductionHeading,
+        markdown: testMarkdown,
     }
 ]
 

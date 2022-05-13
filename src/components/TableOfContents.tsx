@@ -6,7 +6,11 @@ interface Heading {
     id: string,
 }
 
-function useHeadings(): Heading[] {
+export interface TableOfContentsRef {
+    setActiveId: (id: string) => void,
+}
+
+export const TableOfContents = forwardRef((props: {content: string}, ref: ForwardedRef<TableOfContentsRef>) => {
     const [headings, setHeadings] = useState<Heading[]>([]);
 
     useEffect(() => {
@@ -17,17 +21,8 @@ function useHeadings(): Heading[] {
             }));
 
         setHeadings(headingElements);
-    }, []);
+    }, [props.content]);
 
-    return headings;
-}
-
-export interface TableOfContentsRef {
-    setActiveId: (id: string) => void,
-}
-
-export const TableOfContents = forwardRef((props: {}, ref: ForwardedRef<TableOfContentsRef>) => {
-    const headings = useHeadings();
     const [activeId, setActiveId] = useState<string>();
 
     useImperativeHandle(ref, () => ({

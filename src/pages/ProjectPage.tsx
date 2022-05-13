@@ -1,21 +1,80 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { HashLink } from "react-router-hash-link";
 import { Link, useParams } from "react-router-dom";
 import { formatProjectTime, getProject, indexOfProject, LinkInfo, ProjectInfo } from "../data/ProjectInfo";
-import { testMarkdown } from "../data/testMarkdown";
 import { ProjectMarkdown } from "../components/ProjectMarkdown";
 import { TableOfContents, TableOfContentsRef } from "../components/TableOfContents";
 import "../css/Global.css";
 import "../css/ProjectPage.css";
 
-function ExternalLink(props: {link: LinkInfo}) {
+export function ProjectPage() {
+    const { projectId } = useParams();
+    const projectIndex = indexOfProject(projectId);
+    const project = getProject(projectIndex);
+
     return (
-        <a href={props.link.url} className="project-page__project-link">
-            {props.link.name}
-        </a>
+        project ?
+            <ProjectPageContent project={project} projectIndex={projectIndex} />
+            : null
+    );
+}
+
+function ProjectPageContent(props: {project: ProjectInfo, projectIndex: number}) {
+    const tableOfContents = useRef<TableOfContentsRef>(null);
+
+    const [markdown, setMarkdown] = useState<string>("");
+
+    useEffect(() => {
+        fetch(props.project.markdown)
+            .then((response: Response) => {
+                if (!response.ok) {
+                    throw new Error(`Error fetching markdown file ${props.project.markdown}: ${response.status} ${response.statusText}`);
+                }
+
+                return response.text();
+            })
+            .then((text: string) => setMarkdown(text))
+            .catch((err) => console.error(err));
+    }, [props.project]);
+
+    const onHeadingEnteredView = (id: string) => {
+        tableOfContents.current?.setActiveId(id);
+    };
+
+    return (
+        <Row className="py-5 px-2 justify-content-evenly">
+            <Col md={3}>
+                <div className="text-md-end project-page__links-container project-page__toc-container">
+                    <TableOfContents ref={tableOfContents} content={markdown}/>
+                    <HashLink
+                        className="mt-5 project-page__toc-link"
+                        to="/#projects"
+                    >
+                        {"< All projects"}
+                    </HashLink>
+                </div>
+            </Col>
+            <Col md={7}>
+                <h3>
+                    {props.project.name}
+                </h3>
+                <div className="project-page__accent">
+                    {formatProjectTime(props.project)}
+                </div>
+                <ExternalLinks links={props.project.links}/>
+                <ProjectMarkdown
+                    markdown={markdown}
+                    notifyEnteredView={onHeadingEnteredView}
+                />
+                <div className="my-4 d-flex">
+                    <PreviousProject projectIndex={props.projectIndex}/>
+                    <NextProject projectIndex={props.projectIndex}/>
+                </div>
+            </Col>
+        </Row>
     );
 }
 
@@ -35,6 +94,14 @@ function ExternalLinks(props: {links: LinkInfo[]}) {
                 })
             }
         </div>
+    );
+}
+
+function ExternalLink(props: {link: LinkInfo}) {
+    return (
+        <a href={props.link.url} className="project-page__project-link">
+            {props.link.name}
+        </a>
     );
 }
 
@@ -68,55 +135,5 @@ function LinkToProject(props: {project: ProjectInfo, alignRight: boolean, subtit
             </Link>
             <p className="project-page__accent">{props.subtitle}</p>
         </div>
-    );
-}
-
-export function ProjectPage() {
-    const { projectId } = useParams();
-
-    const tableOfContents = useRef<TableOfContentsRef>(null);
-
-    const projectIndex = indexOfProject(projectId);
-    const project = getProject(projectIndex);
-
-    if (!project) {
-        return null;
-    }
-
-    const onHeadingEnteredView = (id: string) => {
-        tableOfContents.current?.setActiveId(id);
-    };
-
-    return (
-        <Row className="py-5 px-2 justify-content-evenly">
-            <Col md={3}>
-                <div className="text-md-end project-page__links-container project-page__toc-container">
-                    <TableOfContents ref={tableOfContents}/>
-                    <HashLink
-                        className="mt-5 project-page__toc-link"
-                        to="/#projects"
-                    >
-                        {"< All projects"}
-                    </HashLink>
-                </div>
-            </Col>
-            <Col md={7}>
-                <h3>
-                    {project.name}
-                </h3>
-                <div className="project-page__accent">
-                    {formatProjectTime(project)}
-                </div>
-                <ExternalLinks links={project.links}/>
-                <ProjectMarkdown
-                    markdown={testMarkdown}
-                    notifyEnteredView={onHeadingEnteredView}
-                />
-                <div className="my-4 d-flex">
-                    <PreviousProject projectIndex={projectIndex}/>
-                    <NextProject projectIndex={projectIndex}/>
-                </div>
-            </Col>
-        </Row>
     );
 }
