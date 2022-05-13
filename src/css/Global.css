@@ -11,7 +11,6 @@
     --dark-text: #eeeded;
 }
 
-/* todo: fix the variable names */
 body {
     --text-font: "Inter", var(--bs-body-font-family);
     --accent-font: "Roboto Mono", var(--bs-body-font-family);
@@ -44,7 +43,7 @@ h1, h2, h3, h4, h5, h6, .heading {
     font-weight: bold;
 }
 
-a {
+a, .link {
     color: var(--link-color);
     transition: color 150ms ease-out;
 }

@@ -28,7 +28,7 @@
     text-decoration: none;
 }
 
-.project-page__toc-link:focus {
+.project-page__active {
     color: var(--text-color);
     opacity: 90%;
 }
