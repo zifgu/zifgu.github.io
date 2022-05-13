@@ -42,7 +42,7 @@ function ProjectCard(props: {project: ProjectInfo, index: number}) {
         <div className="project-card">
             <AnimateWhenHovered>
                 {
-                    (hover: boolean) => <ProjectCardImage hover={hover} link={projectLink}/>
+                    (hover: boolean) => <ProjectCardImage hover={hover} link={projectLink} src={props.project.headerImageSrc}/>
                 }
             </AnimateWhenHovered>
             <AnimateWhenReached threshold={0.4}>
@@ -61,7 +61,7 @@ function ProjectCard(props: {project: ProjectInfo, index: number}) {
     );
 }
 
-function ProjectCardImage(props: {hover: boolean, link: string}) {
+function ProjectCardImage(props: {hover: boolean, link: string, src: string}) {
     const style = useSpring({
         transform: props.hover ? "scale(0.925)" : "scale(1)",
     });
@@ -69,7 +69,7 @@ function ProjectCardImage(props: {hover: boolean, link: string}) {
     return (
         <Link to={props.link}>
             <animated.img
-                src="https://via.placeholder.com/500x280"
+                src={props.src}
                 className="img-fluid project-card__image"
                 style={style}
             />

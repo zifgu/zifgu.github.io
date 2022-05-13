@@ -20,7 +20,7 @@ export interface ProjectInfo {
     summary: ReactNode,
     links: LinkInfo[],
     markdown: string,
-    headerImageSrc?: string,
+    headerImageSrc: string,
     technologies: string[],
 }
 
