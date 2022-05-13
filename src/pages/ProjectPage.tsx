@@ -38,7 +38,7 @@ function ProjectPageContent(props: {project: ProjectInfo, projectIndex: number})
             })
             .then((text: string) => setMarkdown(text))
             .catch((err) => console.error(err));
-    }, [props.project]);
+    }, [props.project.markdown]);
 
     const onHeadingChangedView = (id: string, inView: boolean) => {
         tableOfContents.current?.onHeadingChangedView(id, inView);
