@@ -1,0 +1,11 @@
+.not-found__link {
+    font-family: var(--accent-font);
+    text-decoration: none;
+}
+
+.not-found__icon {
+    align-self: center;
+
+    color: var(--link-color);
+    opacity: 75%;
+}

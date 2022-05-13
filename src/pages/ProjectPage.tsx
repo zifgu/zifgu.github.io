@@ -7,6 +7,7 @@ import { Link, useParams } from "react-router-dom";
 import { formatProjectTime, getProject, indexOfProject, LinkInfo, ProjectInfo } from "../data/ProjectInfo";
 import { ProjectMarkdown } from "../components/ProjectMarkdown";
 import { TableOfContents, TableOfContentsRef } from "../components/TableOfContents";
+import { NotFound } from "./NotFound";
 import "../css/Global.css";
 import "../css/ProjectPage.css";
 
@@ -18,7 +19,7 @@ export function ProjectPage() {
     return (
         project ?
             <ProjectPageContent project={project} projectIndex={projectIndex} />
-            : null
+            : <NotFound />
     );
 }
 
