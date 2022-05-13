@@ -1,4 +1,4 @@
-import React, { ForwardedRef, forwardRef, useEffect, useImperativeHandle, useState } from "react";
+import React, { ForwardedRef, forwardRef, useEffect, useImperativeHandle, useRef, useState } from "react";
 import "../css/ProjectPage.css";
 
 interface Heading {
@@ -7,11 +7,16 @@ interface Heading {
 }
 
 export interface TableOfContentsRef {
-    setActiveId: (id: string) => void,
+    onHeadingChangedView: (id: string, inView: boolean) => void,
+}
+
+interface HeadingsMap {
+    [id: string]: boolean,
 }
 
 export const TableOfContents = forwardRef((props: {content: string}, ref: ForwardedRef<TableOfContentsRef>) => {
     const [headings, setHeadings] = useState<Heading[]>([]);
+    const headingsVisibility = useRef<HeadingsMap>({});
 
     useEffect(() => {
         const headingElements: Heading[] = Array.from(document.querySelectorAll("h4, h5, h6"))
@@ -26,8 +31,20 @@ export const TableOfContents = forwardRef((props: {content: string}, ref: Forwar
     const [activeId, setActiveId] = useState<string>();
 
     useImperativeHandle(ref, () => ({
-        setActiveId: (id: string) => setActiveId(id),
-    }), []);
+        onHeadingChangedView: (id: string, inView: boolean) => {
+            headingsVisibility.current[id] = inView;
+
+            const idsOfVisible: string[] = Object.keys(headingsVisibility.current)
+                .filter((id) => headingsVisibility.current[id]);
+
+            if (idsOfVisible.length === 1) {
+                setActiveId(idsOfVisible[0]);
+            } else if (idsOfVisible.length > 1) {
+                idsOfVisible.sort((id1: string, id2: string) => comparePositionInArray(headings, id1, id2));
+                setActiveId(idsOfVisible[0]);
+            }
+        },
+    }), [headings]);
 
     return (
         <>
@@ -46,6 +63,19 @@ export const TableOfContents = forwardRef((props: {content: string}, ref: Forwar
         </>
     );
 });
+
+// Returns < 0 if id1 is before id2, and > 0 if id2 is before id1. Otherwise, returns 0
+function comparePositionInArray(array: Heading[], id1: string, id2: string): number {
+    for (let heading of array) {
+        if (heading.id === id1) {
+            return -1;
+        } else if (heading.id === id2) {
+            return 1;
+        }
+    }
+
+    return 0;
+}
 
 function TableOfContentsLink(props: { text: string, id: string, active: boolean }) {
     const activeClass = props.active ? " project-page__active" : "";

@@ -40,8 +40,8 @@ function ProjectPageContent(props: {project: ProjectInfo, projectIndex: number})
             .catch((err) => console.error(err));
     }, [props.project]);
 
-    const onHeadingEnteredView = (id: string) => {
-        tableOfContents.current?.setActiveId(id);
+    const onHeadingChangedView = (id: string, inView: boolean) => {
+        tableOfContents.current?.onHeadingChangedView(id, inView);
     };
 
     return (
@@ -67,7 +67,7 @@ function ProjectPageContent(props: {project: ProjectInfo, projectIndex: number})
                 <ExternalLinks links={props.project.links}/>
                 <ProjectMarkdown
                     markdown={markdown}
-                    notifyEnteredView={onHeadingEnteredView}
+                    changedViewCallback={onHeadingChangedView}
                 />
                 <div className="my-4 d-flex">
                     <PreviousProject projectIndex={props.projectIndex}/>

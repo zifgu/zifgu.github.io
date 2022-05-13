@@ -9,16 +9,14 @@ function generateId(headingText: any): string {
     return headingText.toString().replace(" ", "_");
 }
 
-function Heading(props: { as: any, id?: string, children: ReactNode, notifyEnteredView: (id: string) => void }) {
+function Heading(props: { as: any, id?: string, children: ReactNode, changedViewCallback: (id: string, inView: boolean) => void }) {
     const Component = props.as;
     const headingId = props.id ?? generateId(props.children);
 
     return (
         <InView
             onChange={(inView: boolean) => {
-                if (inView) {
-                    props.notifyEnteredView(headingId);
-                }
+                props.changedViewCallback(headingId, inView);
             }}
         >
             <Component id={headingId}>
@@ -28,7 +26,7 @@ function Heading(props: { as: any, id?: string, children: ReactNode, notifyEnter
     );
 }
 
-export function ProjectMarkdown(props: { markdown: string, notifyEnteredView: (id: string) => void }) {
+export function ProjectMarkdown(props: { markdown: string, changedViewCallback: (id: string, inView: boolean) => void }) {
     const renderImageOrVideo = ({...imgProps}) => {
         if (imgProps.src && imgProps.alt) {
             if (imgProps.alt.startsWith("v:")) {
@@ -45,9 +43,9 @@ export function ProjectMarkdown(props: { markdown: string, notifyEnteredView: (i
     return (
         <ReactMarkdown
             components={{
-                h1: ({children}) => <Heading as={"h4"} notifyEnteredView={props.notifyEnteredView}>{children}</Heading>,
-                h2: ({children}) => <Heading as={"h5"} notifyEnteredView={props.notifyEnteredView}>{children}</Heading>,
-                h3: ({children}) => <Heading as={"h6"} notifyEnteredView={props.notifyEnteredView}>{children}</Heading>,
+                h1: ({children}) => <Heading as={"h4"} changedViewCallback={props.changedViewCallback}>{children}</Heading>,
+                h2: ({children}) => <Heading as={"h5"} changedViewCallback={props.changedViewCallback}>{children}</Heading>,
+                h3: ({children}) => <Heading as={"h6"} changedViewCallback={props.changedViewCallback}>{children}</Heading>,
                 img: renderImageOrVideo,
             }}
             remarkPlugins={[remarkUnwrapImages]}
