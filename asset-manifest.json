@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.c78b750f.css",
-    "main.js": "/static/js/main.cc76bd01.js",
+    "main.css": "/static/css/main.ff55b0ff.css",
+    "main.js": "/static/js/main.43cad635.js",
     "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
     "static/media/TransductionHeading.png": "/static/media/TransductionHeading.001763a7d2b5c32555d3.png",
     "static/media/OERGeomaticsHeading.png": "/static/media/OERGeomaticsHeading.bdd60b2ee19d64699913.png",
@@ -9,13 +9,14 @@
     "static/media/FanworksSiteHeading.png": "/static/media/FanworksSiteHeading.ec06440be57de478a571.png",
     "static/media/CodenamesSingleplayerHeading.png": "/static/media/CodenamesSingleplayerHeading.0351f7d4406f851269e2.png",
     "static/media/TimetableCalculatorHeading.png": "/static/media/TimetableCalculatorHeading.829bbeb2fd2ec4cf906b.png",
+    "static/media/testMarkdown.md": "/static/media/testMarkdown.97a2a23b651e521c9214.md",
     "index.html": "/index.html",
-    "main.c78b750f.css.map": "/static/css/main.c78b750f.css.map",
-    "main.cc76bd01.js.map": "/static/js/main.cc76bd01.js.map",
+    "main.ff55b0ff.css.map": "/static/css/main.ff55b0ff.css.map",
+    "main.43cad635.js.map": "/static/js/main.43cad635.js.map",
     "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.c78b750f.css",
-    "static/js/main.cc76bd01.js"
+    "static/css/main.ff55b0ff.css",
+    "static/js/main.43cad635.js"
   ]
 }
