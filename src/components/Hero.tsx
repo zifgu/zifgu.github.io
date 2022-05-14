@@ -3,8 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../css/Global.css";
 import "../css/Hero.css";
-import { getSocials } from "../data/Contact";
-import { SocialMedia } from "../data/SocialMedia";
+import { getSocialsInHeader, SocialMedia } from "../data/Contact";
 import { WaveTest } from "./WaveTest";
 
 // TODO: figure out how to enforce types on polymorphic components
@@ -35,7 +34,7 @@ export function Hero() {
                 </p>
                 <div className="icon-container hero__icon-container">
                     {
-                        getSocials().map((socialMedia: SocialMedia) => {
+                        getSocialsInHeader().map((socialMedia: SocialMedia) => {
                             return (
                                 <HeroIcon
                                     key={socialMedia.site}

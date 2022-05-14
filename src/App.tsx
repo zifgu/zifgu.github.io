@@ -5,6 +5,7 @@ import { ProjectPage } from "./pages/ProjectPage";
 import { MainPage } from "./pages/MainPage";
 import { Layout } from "./pages/Layout";
 import { NotFound } from "./pages/NotFound";
+import { Attribution } from "./pages/Attribution";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<Layout/>}>
                         <Route index element={<MainPage/>}/>
+                        <Route path="attribution" element={<Attribution/>}/>
                         <Route path="projects/:projectId" element={<ProjectPage/>}/>
                         <Route path="*" element={<NotFound/>}/>
                     </Route>

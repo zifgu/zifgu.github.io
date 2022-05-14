@@ -3,17 +3,14 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../css/Global.css";
 import "../css/Footer.css";
-import { getSocials } from "../data/Contact";
-import { SocialMedia } from "../data/SocialMedia";
+import { getSocials, SocialMedia } from "../data/Contact";
+import { Link } from "react-router-dom";
 
 export function Footer() {
     return (
-        <Row className="footer">
+        <Row className="footer py-3">
             <Col>
-                <p className="footer__acknowledgments">
-                    Made with React.
-                </p>
-                <div className="icon-container footer__icon-container">
+                <div className="my-5 icon-container footer__icon-container">
                     {
                         getSocials().map((socialMedia: SocialMedia) => {
                             return (
@@ -27,6 +24,11 @@ export function Footer() {
                         })
                     }
                 </div>
+                <p className="footer__acknowledgments">
+                    <Link to={"/attribution"} className="footer__attribution-link">Attributions</Link>
+                    {" | Copyright "}
+                    <span className="fs-5">&copy;</span> 2021 Floria Gu.
+                </p>
             </Col>
         </Row>
     );
