@@ -38,7 +38,7 @@ function FooterIcon({as, link, ...props}: any) {
     const Component = as;
 
     return (
-        <a href={link} target="_blank" rel="noreferrer">
+        <a href={link} target="_blank" rel="noreferrer" className="footer__icon">
             <Component {...props}/>
         </a>
     );

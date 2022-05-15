@@ -8,6 +8,14 @@
     color: var(--text-muted-color);
 }
 
+.footer__icon {
+    color: var(--text-muted-color);
+}
+
+.footer__icon:hover {
+    color: var(--link-hover-color);
+}
+
 .footer__icon-container {
     justify-content: center;
     gap: 3rem;
