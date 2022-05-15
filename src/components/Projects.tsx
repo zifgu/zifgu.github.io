@@ -39,7 +39,7 @@ function ProjectCard(props: {project: ProjectInfo, index: number}) {
     const projectLink = `/projects/${props.project.id}`;
 
     return (
-        <div className="project-card">
+        <div>
             <AnimateWhenHovered>
                 {
                     (hover: boolean) => <ProjectCardImage hover={hover} link={projectLink} src={props.project.headerImageSrc}/>
@@ -84,7 +84,7 @@ function ProjectCardBody(props: {project: ProjectInfo, link: string, index: numb
     });
 
     return (
-        <animated.div className="pt-3" style={bodySpring}>
+        <animated.div className="pt-4 h-100" style={bodySpring}>
             <div className="d-flex justify-content-between">
                 <div className="text-start project-card__details">
                     {props.project.affiliation}

@@ -3,18 +3,9 @@
     font-style: italic;
 }
 
-.project-card {
-    border: 0;
-}
-
 .project-card__image {
     width: 100%;
     border-radius: .25rem;
-}
-
-.project-card__body {
-    padding-left: 0;
-    padding-right: 0;
 }
 
 .project-card__details {
