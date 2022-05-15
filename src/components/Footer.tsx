@@ -10,7 +10,7 @@ export function Footer() {
     return (
         <Row className="footer py-3">
             <Col>
-                <div className="my-5 icon-container footer__icon-container">
+                <div className="mt-5 mb-4 icon-container footer__icon-container">
                     {
                         getSocials().map((socialMedia: SocialMedia) => {
                             return (
