@@ -41,7 +41,7 @@ function ToggleModeButton() {
 function IconButton(props: {className: string, icon: ReactElement, onClick: () => void}) {
     return (
         <div
-            className={"nav__icon-btn " + props.className}
+            className={"nav__mode-btn " + props.className}
             onClick={props.onClick}
         >
             {props.icon}
