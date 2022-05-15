@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ff55b0ff.css",
-    "main.js": "/static/js/main.43cad635.js",
+    "main.css": "/static/css/main.7237640d.css",
+    "main.js": "/static/js/main.58a2a757.js",
     "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
     "static/media/TransductionHeading.png": "/static/media/TransductionHeading.001763a7d2b5c32555d3.png",
     "static/media/OERGeomaticsHeading.png": "/static/media/OERGeomaticsHeading.bdd60b2ee19d64699913.png",
@@ -11,12 +11,12 @@
     "static/media/TimetableCalculatorHeading.png": "/static/media/TimetableCalculatorHeading.829bbeb2fd2ec4cf906b.png",
     "static/media/testMarkdown.md": "/static/media/testMarkdown.97a2a23b651e521c9214.md",
     "index.html": "/index.html",
-    "main.ff55b0ff.css.map": "/static/css/main.ff55b0ff.css.map",
-    "main.43cad635.js.map": "/static/js/main.43cad635.js.map",
+    "main.7237640d.css.map": "/static/css/main.7237640d.css.map",
+    "main.58a2a757.js.map": "/static/js/main.58a2a757.js.map",
     "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ff55b0ff.css",
-    "static/js/main.43cad635.js"
+    "static/css/main.7237640d.css",
+    "static/js/main.58a2a757.js"
   ]
 }
