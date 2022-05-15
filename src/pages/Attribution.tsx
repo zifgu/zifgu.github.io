@@ -34,5 +34,5 @@ function IconAttributionList() {
                 <a href="https://icons.getbootstrap.com/icons/stars/">"stars"</a> from <a href="https://github.com/twbs/icons">Bootstrap Icons</a> is licensed under the <a href="https://opensource.org/licenses/MIT">MIT license</a>
             </li>
         </ul>
-    )
+    );
 }

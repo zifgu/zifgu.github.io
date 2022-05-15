@@ -127,10 +127,6 @@ export function getAllProjects(): ProjectInfo[] {
     return projects;
 }
 
-export function numProjects() {
-    return projects.length;
-}
-
 export function getProject(index: number): ProjectInfo | undefined {
     return projects[index];
 }

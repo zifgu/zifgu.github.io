@@ -3,8 +3,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../css/Global.css";
 import "../css/Hero.css";
-import { getSocialsInHeader, SocialMedia } from "../data/Contact";
-import { WaveTest } from "./WaveTest";
+import { getSocialsInHeader, SocialMedia } from "../data/SocialMedia";
+import { WaveGraphic } from "./WaveGraphic";
 
 // TODO: figure out how to enforce types on polymorphic components
 function HeroIcon({as, link, ...props}: any) {
@@ -21,7 +21,7 @@ function HeroIcon({as, link, ...props}: any) {
 
 export function Hero() {
     return (
-        <Row id="top" className="hero vh-100">
+        <Row id="top" className="vh-100">
             <Col
                 xs md={3}
                 className="hero__text mx-5"
@@ -48,7 +48,7 @@ export function Hero() {
                 </div>
             </Col>
             <div className="hero__canvas-container">
-                <WaveTest />
+                <WaveGraphic />
             </div>
         </Row>
     );

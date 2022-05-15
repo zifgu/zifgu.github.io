@@ -35,7 +35,7 @@
 
 /* || DARK MODE TOGGLE */
 
-.nav__icon-btn {
+.nav__mode-btn {
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -45,7 +45,7 @@
     overflow: hidden;
 }
 
-.nav__icon-btn::before {
+.nav__mode-btn::before {
     content: "";
     position: absolute;
     top: 50%;
@@ -60,11 +60,11 @@
     transition: transform 500ms ease-out;
 }
 
-.nav__icon-btn:hover::before {
+.nav__mode-btn:hover::before {
     transform: scale(3);
 }
 
-.nav__icon-btn svg {
+.nav__mode-btn svg {
     /* Fade icon colour when hovered over */
     transition: fill 500ms ease-out;
 }

@@ -7,7 +7,6 @@ import "../css/About.css";
 import { animated, useSpring } from "react-spring";
 import { AnimateWhenReached } from "./Animation";
 
-// todo: what is the type of this prop?
 function AboutContent({reached}: {reached: boolean}) {
     const styles = useSpring({
         transform: reached ? "translateY(0)" : "translateY(15%)",

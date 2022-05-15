@@ -32,11 +32,15 @@ export const TableOfContents = forwardRef((props: {content: string}, ref: Forwar
 
     useImperativeHandle(ref, () => ({
         onHeadingChangedView: (id: string, inView: boolean) => {
+            // Update visibility of this heading
             headingsVisibility.current[id] = inView;
 
+            // List all visible headings
             const idsOfVisible: string[] = Object.keys(headingsVisibility.current)
                 .filter((id) => headingsVisibility.current[id]);
 
+            // Active heading is the topmost visible heading
+            // If no headings are visible, keep the last active heading
             if (idsOfVisible.length === 1) {
                 setActiveId(idsOfVisible[0]);
             } else if (idsOfVisible.length > 1) {

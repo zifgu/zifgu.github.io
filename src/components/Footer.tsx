@@ -3,7 +3,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import "../css/Global.css";
 import "../css/Footer.css";
-import { getSocials, SocialMedia } from "../data/Contact";
+import { getSocials, SocialMedia } from "../data/SocialMedia";
 import { Link } from "react-router-dom";
 
 export function Footer() {
