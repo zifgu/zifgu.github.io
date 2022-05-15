@@ -36,7 +36,7 @@ export function Projects() {
 }
 
 function ProjectCard(props: {project: ProjectInfo, index: number}) {
-    const projectLink = `/projects/${props.project.name}`;
+    const projectLink = `/projects/${props.project.id}`;
 
     return (
         <div className="project-card">

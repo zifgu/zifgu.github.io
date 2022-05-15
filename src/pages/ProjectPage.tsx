@@ -131,7 +131,7 @@ function LinkToProject(props: {project: ProjectInfo, alignRight: boolean, subtit
 
     return (
         <div className={`${alignment} flex-grow-1`}>
-            <Link to={`/projects/${props.project.name}`} className="fs-5 heading link">
+            <Link to={`/projects/${props.project.id}`} className="fs-5 heading link">
                 {props.project.name}
             </Link>
             <p className="project-page__accent">{props.subtitle}</p>

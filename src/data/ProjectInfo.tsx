@@ -13,6 +13,7 @@ export interface LinkInfo {
 }
 
 export interface ProjectInfo {
+    id: string,
     name: string,
     affiliation: string,
     start: Date,
@@ -41,6 +42,7 @@ function formatMonthYear(date: Date): string {
 
 const projects: ProjectInfo[] = [
     {
+        id: "personal-website",
         name: "Personal website",
         start: new Date(2021, 11),
         finished: "present",
@@ -65,6 +67,7 @@ const projects: ProjectInfo[] = [
         markdown: testMarkdown,
     },
     {
+        id: "codenames-app",
         name: "Codenames App",
         start: new Date(2021, 11),
         finished: new Date(2022, 0),
@@ -76,6 +79,7 @@ const projects: ProjectInfo[] = [
         markdown: testMarkdown,
     },
     {
+        id: "fanworks-site",
         name: "Fanworks Site",
         start: new Date(2021, 4),
         finished: new Date(2021, 5),
@@ -87,6 +91,7 @@ const projects: ProjectInfo[] = [
         markdown: testMarkdown,
     },
     {
+        id: "timetable-generator",
         name: "Timetable Generator",
         start: new Date(2020, 8),
         finished: new Date(2020, 11),
@@ -98,6 +103,7 @@ const projects: ProjectInfo[] = [
         markdown: testMarkdown,
     },
     {
+        id: "oer-geomatics",
         name: "OER Geomatics project",
         start: new Date(2021, 8),
         finished: "present",
@@ -111,6 +117,7 @@ const projects: ProjectInfo[] = [
         markdown: testMarkdown,
     },
     {
+        id: "transduction",
         name: "Transduction",
         start: new Date(2020, 9),
         finished: new Date(2021, 7),
@@ -131,12 +138,12 @@ export function getProject(index: number): ProjectInfo | undefined {
     return projects[index];
 }
 
-export function indexOfProject(name: string | undefined): number {
-    if (!name) {
+export function indexOfProject(id: string | undefined): number {
+    if (!id) {
         return -1;
     }
 
     return projects.findIndex((project) => {
-        return project.name === name
+        return project.id === id
     });
 }
