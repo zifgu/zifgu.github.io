@@ -19,6 +19,7 @@ body {
     --text-color: var(--light-text);
     --text-muted-color: #AAACA5;
     --badge-gradient: linear-gradient(90deg, #88AB96, #9FDDD9);
+    --hero-icon-gradient: linear-gradient(135deg, #ee9bec, #79d7d0);
     --link-color: #598C51;
     --link-hover-color: #88C6A4;
 }
@@ -28,6 +29,7 @@ body.dark {
     --text-color: var(--dark-text);
     --text-muted-color: #AAACA5;
     --badge-gradient: linear-gradient(90deg, #88AB96, #9FDDD9);
+    --hero-icon-gradient: linear-gradient(135deg, #d779d5, #4fbbb2);
     --link-color: #88C6A4;
     --link-hover-color: #598C51;
 }
