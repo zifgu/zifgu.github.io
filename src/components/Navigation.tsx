@@ -7,6 +7,8 @@ import { IoMoon, IoSunny } from "react-icons/io5";
 import { FiMenu } from "react-icons/fi";
 import "../css/Navigation.css";
 
+export const darkModeClass: string = "dark";
+
 function ToggleModeButton() {
     // false means light, true means dark
     const [darkMode, setDarkMode] = useState(() => window.matchMedia("(prefers-color-scheme: dark)").matches);
@@ -23,9 +25,9 @@ function ToggleModeButton() {
 
     useEffect(() => {
         if (darkMode) {
-            document.body.classList.add("dark");
+            document.body.classList.add(darkModeClass);
         } else {
-            document.body.classList.remove("dark");
+            document.body.classList.remove(darkModeClass);
         }
     }, [darkMode]);
 

@@ -4,7 +4,10 @@
     margin-left: auto;
     margin-right: auto;
 
-    /* TODO: box shadow in dark mode */
     box-shadow: 0 16px 20px -4px rgb(0 0 0 / 10%), 0 40px 50px rgb(0 0 0 / 10%);
     border-radius: .25rem;
+}
+
+.dark .about__image {
+    box-shadow: none;
 }
