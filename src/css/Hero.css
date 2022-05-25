@@ -4,6 +4,11 @@
     z-index: 5;
 }
 
+.hero__subtitle {
+    font-family: var(--accent-font);
+    font-size: 1.2rem;
+}
+
 .hero__icon-container {
     justify-content: end;
 }

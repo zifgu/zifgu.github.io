@@ -23,14 +23,14 @@ export function Hero() {
     return (
         <Row id="top" className="vh-100">
             <Col
-                xs md={3}
+                xs md={4}
                 className="hero__text mx-5"
             >
                 <h1>
                     Hi, I'm Floria
                 </h1>
-                <p className="my-4">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                <p className="my-4 hero__subtitle">
+                    I'm a student in Computer Science at the University of British Columbia.
                 </p>
                 <div className="icon-container hero__icon-container">
                     {
