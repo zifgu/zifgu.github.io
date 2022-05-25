@@ -61,7 +61,7 @@ export function NavBar() {
     // TODO: ideally, dark mode toggle should be outside navbar when collapsed
     return (
         <Navbar expand="md">
-            <span className="nav__title">Title</span>
+            <span className="nav__title ms-2">F.</span>
             <Navbar.Toggle aria-controls="navbar-nav">
                 <FiMenu size={20}/>
             </Navbar.Toggle>

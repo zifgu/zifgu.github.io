@@ -1,5 +1,6 @@
 .nav__title {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
+    font-family: var(--accent-font);
 }
 
 /* || NAVBAR LINKS (About, Projects, etc) */
