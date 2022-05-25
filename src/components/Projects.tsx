@@ -16,7 +16,7 @@ export function Projects() {
                     Projects
                 </h4>
                 <p className="projects__subtitle">
-                    Check out the projects I’ve worked on, etc etc
+                    Here are some of my programming projects.
                 </p>
             </Col>
             <Col>

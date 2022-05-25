@@ -5,6 +5,8 @@ import TimetableCalculatorHeading from "./images/heading/TimetableCalculatorHead
 import PersonalWebsiteHeading from "./images/heading/PersonalWebsiteHeading.png";
 import CodenamesSingleplayerHeading from "./images/heading/CodenamesSingleplayerHeading.png";
 import OERGeomaticsHeading from "./images/heading/OERGeomaticsHeading.png";
+import EmpathHeading from "./images/heading/EmpathHeading.png";
+import InsightUBCHeading from "./images/heading/InsightUBCHeading.png";
 import testMarkdown from "../data/testMarkdown.md";
 
 export interface LinkInfo {
@@ -43,7 +45,7 @@ function formatMonthYear(date: Date): string {
 const projects: ProjectInfo[] = [
     {
         id: "personal-website",
-        name: "Personal website",
+        name: "Personal Website",
         start: new Date(2021, 11),
         finished: "present",
         affiliation: "Personal Project",
@@ -62,8 +64,44 @@ const projects: ProjectInfo[] = [
             },
         ],
         headerImageSrc: PersonalWebsiteHeading,
-        summary: "The website you're on!",
+        summary: "This website! Personal site and portfolio.",
         technologies: ["React", "TypeScript", "Bootstrap", "HTML/CSS", "GitHub Pages"],
+        markdown: testMarkdown,
+    },
+    {
+        id: "oer-geomatics",
+        name: "OER Geomatics Project",
+        start: new Date(2021, 8),
+        finished: new Date(2022, 3),
+        affiliation: "UBC Emerging Media Lab",
+        links: [],
+        technologies: ["React", "JavaScript", "Three.js"],
+        summary: "Interactive 3D visualization for teaching geomatics students about models of Earth.",
+        headerImageSrc: OERGeomaticsHeading,
+        markdown: testMarkdown,
+    },
+    {
+        id: "me-an-empath",
+        name: "Me, An Empath",
+        start: new Date(2022, 2),
+        affiliation: "cmd-f 2022 Hackathon",
+        links: [],
+        technologies: ["React", "JavaScript", "Bootstrap", "Figma", "OpenAI"],
+        summary: "Web app that can detect the emotion in text messages and suggest ways to respond. Created for" +
+            " the cmd-f 2022 hackathon.",
+        headerImageSrc: EmpathHeading,
+        markdown: testMarkdown,
+    },
+    {
+        id: "insight-ubc",
+        name: "Insight UBC",
+        start: new Date(2021, 8),
+        finished: new Date(2022, 11),
+        affiliation: "CPSC 310: Introduction to Software Engineering",
+        links: [],
+        headerImageSrc: InsightUBCHeading,
+        summary: "REST API that manages and supports SQL-like queries over UBC course datasets.",
+        technologies: ["TypeScript", "Node.js", "Express"],
         markdown: testMarkdown,
     },
     {
@@ -74,7 +112,7 @@ const projects: ProjectInfo[] = [
         affiliation: "Personal Project",
         links: [],
         headerImageSrc: CodenamesSingleplayerHeading,
-        summary: "A single page React app for playing the popular word-guessing game Codenames.",
+        summary: "Online implementation of the word-guessing game Codenames.",
         technologies: ["React", "TypeScript", "Bootstrap", "HTML/CSS"],
         markdown: testMarkdown,
     },
@@ -86,8 +124,20 @@ const projects: ProjectInfo[] = [
         affiliation: "CPSC 304: Introduction to Relational Databases",
         links: [],
         headerImageSrc: FanworksSiteHeading,
-        summary: "A Java web application for sharing and reading fanworks, similar to Archive of Our Own.",
+        summary: "Web application for sharing fan-made fiction and artworks, inspired by Archive of Our Own.",
         technologies: ["Java", "SQL", "Oracle Database", "HTML/CSS"],
+        markdown: testMarkdown,
+    },
+    {
+        id: "transduction",
+        name: "Transduction",
+        start: new Date(2020, 9),
+        finished: new Date(2021, 7),
+        affiliation: "UBC Game Development Club",
+        links: [],
+        summary: "3D puzzle game about exploring mindscapes to crack a case – with a cooperative twist.",
+        technologies: ["Unity", "C#"],
+        headerImageSrc: TransductionHeading,
         markdown: testMarkdown,
     },
     {
@@ -98,36 +148,10 @@ const projects: ProjectInfo[] = [
         affiliation: "CPSC 210: Software Construction",
         links: [],
         headerImageSrc: TimetableCalculatorHeading,
-        summary: "A Java desktop application to help students automatically create their course timetables.",
+        summary: "Desktop application to help students automatically schedule their course timetables.",
         technologies: ["Java", "Swing"],
         markdown: testMarkdown,
     },
-    {
-        id: "oer-geomatics",
-        name: "OER Geomatics project",
-        start: new Date(2021, 8),
-        finished: "present",
-        affiliation: "UBC Emerging Media Lab",
-        links: [],
-        technologies: ["React", "JavaScript", "Three.js"],
-        summary: <>
-            An open source interactive 3D visualization for teaching geomatics students about three different models of Earth.
-        </>,
-        headerImageSrc: OERGeomaticsHeading,
-        markdown: testMarkdown,
-    },
-    {
-        id: "transduction",
-        name: "Transduction",
-        start: new Date(2020, 9),
-        finished: new Date(2021, 7),
-        affiliation: "UBC Game Development Club",
-        links: [],
-        summary: "A first-person 3D puzzle game for two players, made as part of the UBC Game Development Club.",
-        technologies: ["Unity", "C#"],
-        headerImageSrc: TransductionHeading,
-        markdown: testMarkdown,
-    }
 ]
 
 export function getAllProjects(): ProjectInfo[] {
