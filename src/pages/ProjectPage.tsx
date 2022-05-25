@@ -107,7 +107,7 @@ function ExternalLink(props: {link: LinkInfo}) {
 }
 
 function PreviousProject(props: {projectIndex: number}) {
-    const prevProject = getProject(props.projectIndex - 1);
+    const prevProject = getProject(props.projectIndex + 1);
 
     return (
         prevProject ?
@@ -117,7 +117,7 @@ function PreviousProject(props: {projectIndex: number}) {
 }
 
 function NextProject(props: {projectIndex: number}) {
-    const nextProject = getProject(props.projectIndex + 1);
+    const nextProject = getProject(props.projectIndex - 1);
 
     return (
         nextProject ?
