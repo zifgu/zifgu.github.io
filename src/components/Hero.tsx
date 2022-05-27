@@ -30,7 +30,7 @@ export function Hero() {
                     Hi, I'm Floria
                 </h1>
                 <p className="my-4 hero__subtitle">
-                    I'm a student in Computer Science at the University of British Columbia.
+                    I'm a Computer Science student at the University of British Columbia.
                 </p>
                 <div className="icon-container hero__icon-container">
                     {
