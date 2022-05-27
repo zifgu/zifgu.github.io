@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.844ef99d.css",
-    "main.js": "/static/js/main.b2ee0f69.js",
+    "main.js": "/static/js/main.f8b11ad1.js",
     "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
     "static/media/TransductionHeading.png": "/static/media/TransductionHeading.01e624d3d424ac0a45bc.png",
     "static/media/OERGeomaticsHeading.png": "/static/media/OERGeomaticsHeading.8f6ef50c5c179d8ee2c0.png",
@@ -14,11 +14,11 @@
     "static/media/testMarkdown.md": "/static/media/testMarkdown.97a2a23b651e521c9214.md",
     "index.html": "/index.html",
     "main.844ef99d.css.map": "/static/css/main.844ef99d.css.map",
-    "main.b2ee0f69.js.map": "/static/js/main.b2ee0f69.js.map",
+    "main.f8b11ad1.js.map": "/static/js/main.f8b11ad1.js.map",
     "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.844ef99d.css",
-    "static/js/main.b2ee0f69.js"
+    "static/js/main.f8b11ad1.js"
   ]
 }
