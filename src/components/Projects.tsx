@@ -53,7 +53,7 @@ function ProjectCard(props: {project: ProjectInfo}) {
 
 function ProjectCardImage(props: {link: string, src: string, hover: boolean}) {
     const style = useSpring({
-        transform: props.hover ? "translateY(-20px)" : "translateY(0)",
+        transform: props.hover ? "scale(0.925)" : "scale(1)",
         config: config.gentle,
     });
 
