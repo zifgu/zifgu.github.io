@@ -7,7 +7,7 @@ import CodenamesSingleplayerHeading from "./images/heading/CodenamesSingleplayer
 import OERGeomaticsHeading from "./images/heading/OERGeomaticsHeading.png";
 import EmpathHeading from "./images/heading/EmpathHeading.png";
 import InsightUBCHeading from "./images/heading/InsightUBCHeading.png";
-import testMarkdown from "../data/testMarkdown.md";
+import testMarkdown from "./testMarkdown.md";
 
 export interface LinkInfo {
     name: string,
@@ -54,17 +54,9 @@ const projects: ProjectInfo[] = [
                 name: "GitHub",
                 url: "https://github.com/zifgu/zifgu.github.io",
             },
-            {
-                name: "Demo",
-                url: "https://github.com/zifgu/zifgu.github.io",
-            },
-            {
-                name: "Devpost",
-                url: "https://github.com/zifgu/zifgu.github.io",
-            },
         ],
         headerImageSrc: PersonalWebsiteHeading,
-        summary: "This website! Personal site and portfolio.",
+        summary: "This website! A personal site and portfolio.",
         technologies: ["React", "TypeScript", "Bootstrap", "HTML/CSS", "GitHub Pages"],
         markdown: testMarkdown,
     },
@@ -74,8 +66,17 @@ const projects: ProjectInfo[] = [
         start: new Date(2021, 8),
         finished: new Date(2022, 3),
         affiliation: "UBC Emerging Media Lab",
-        links: [],
-        technologies: ["React", "JavaScript", "Three.js"],
+        links: [
+            {
+                name: "Visualization",
+                url: "https://ubc-geomatics-textbook.github.io/geomatics-textbook/viz/geodesy-viz/",
+            },
+            {
+                name: "Website",
+                url: "https://eml.ubc.ca/projects/oer-geomatics/",
+            },
+        ],
+        technologies: ["Three.js", "React", "JavaScript"],
         summary: "Interactive 3D visualization for teaching geomatics students about models of Earth.",
         headerImageSrc: OERGeomaticsHeading,
         markdown: testMarkdown,
@@ -85,7 +86,20 @@ const projects: ProjectInfo[] = [
         name: "Me, An Empath",
         start: new Date(2022, 2),
         affiliation: "cmd-f 2022 Hackathon",
-        links: [],
+        links: [
+            {
+                name: "App",
+                url: "https://me-an-empath.netlify.app/",
+            },
+            {
+                name: "Devpost",
+                url: "https://devpost.com/software/me-an-empath",
+            },
+            {
+                name: "GitHub",
+                url: "https://github.com/zifgu/cmd-f-2022",
+            },
+        ],
         technologies: ["React", "JavaScript", "Bootstrap", "Figma", "OpenAI"],
         summary: "Web app that can detect the emotion in text messages and suggest ways to respond. Created for" +
             " the cmd-f 2022 hackathon.",
@@ -110,7 +124,16 @@ const projects: ProjectInfo[] = [
         start: new Date(2021, 11),
         finished: new Date(2022, 0),
         affiliation: "Personal Project",
-        links: [],
+        links: [
+            {
+                name: "Demo",
+                url: "https://rcodenames.netlify.app/",
+            },
+            {
+                name: "GitHub",
+                url: "https://github.com/zifgu/react-codenames-app",
+            },
+        ],
         headerImageSrc: CodenamesSingleplayerHeading,
         summary: "Online implementation of the word-guessing game Codenames.",
         technologies: ["React", "TypeScript", "Bootstrap", "HTML/CSS"],
@@ -134,7 +157,20 @@ const projects: ProjectInfo[] = [
         start: new Date(2020, 9),
         finished: new Date(2021, 7),
         affiliation: "UBC Game Development Club",
-        links: [],
+        links: [
+            {
+                name: "Website",
+                url: "https://www.ubcgamedev.com/transduction",
+            },
+            {
+                name: "Trailer",
+                url: "https://youtu.be/gGJgE94JCxg",
+            },
+            {
+                name: "Demos",
+                url: "https://drive.google.com/drive/folders/1xfuL2QHYvmM3c6x0N50FOCcnUQd9V90v",
+            },
+        ],
         summary: "3D puzzle game about exploring mindscapes to crack a case – with a cooperative twist.",
         technologies: ["Unity", "C#"],
         headerImageSrc: TransductionHeading,
@@ -146,7 +182,12 @@ const projects: ProjectInfo[] = [
         start: new Date(2020, 8),
         finished: new Date(2020, 11),
         affiliation: "CPSC 210: Software Construction",
-        links: [],
+        links: [
+            {
+                name: "GitHub",
+                url: "https://github.com/zifgu/cpsc210-project",
+            },
+        ],
         headerImageSrc: TimetableCalculatorHeading,
         summary: "Desktop application to help students automatically schedule their course timetables.",
         technologies: ["Java", "Swing"],

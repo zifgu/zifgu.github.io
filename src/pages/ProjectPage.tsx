@@ -18,12 +18,12 @@ export function ProjectPage() {
 
     return (
         project ?
-            <ProjectPageContent project={project} projectIndex={projectIndex} />
+            <ProjectPageContent project={project}/>
             : <NotFound />
     );
 }
 
-function ProjectPageContent(props: {project: ProjectInfo, projectIndex: number}) {
+function ProjectPageContent(props: {project: ProjectInfo}) {
     const tableOfContents = useRef<TableOfContentsRef>(null);
 
     const [markdown, setMarkdown] = useState<string>("");
@@ -46,8 +46,8 @@ function ProjectPageContent(props: {project: ProjectInfo, projectIndex: number})
     };
 
     return (
-        <Row className="py-5 px-2 justify-content-evenly">
-            <Col md={3}>
+        <Row className="py-5 px-2">
+            <Col md={3} className="me-5">
                 <div className="text-md-end project-page__links-container project-page__toc-container">
                     <TableOfContents ref={tableOfContents} content={markdown}/>
                     <HashLink
@@ -70,10 +70,6 @@ function ProjectPageContent(props: {project: ProjectInfo, projectIndex: number})
                     markdown={markdown}
                     changedViewCallback={onHeadingChangedView}
                 />
-                <div className="my-4 d-flex">
-                    <PreviousProject projectIndex={props.projectIndex}/>
-                    <NextProject projectIndex={props.projectIndex}/>
-                </div>
             </Col>
         </Row>
     );
@@ -81,7 +77,7 @@ function ProjectPageContent(props: {project: ProjectInfo, projectIndex: number})
 
 function ExternalLinks(props: {links: LinkInfo[]}) {
     return (
-        <div className="my-3 project-page__links-container">
+        <div className="mt-2 mb-4 project-page__links-container">
             {
                 props.links.map((link: LinkInfo, index: number) => {
                     const divider = index > 0 ? " / " : "";
@@ -106,35 +102,3 @@ function ExternalLink(props: {link: LinkInfo}) {
     );
 }
 
-function PreviousProject(props: {projectIndex: number}) {
-    const prevProject = getProject(props.projectIndex + 1);
-
-    return (
-        prevProject ?
-            <LinkToProject project={prevProject} alignRight={false} subtitle={"Previous project"} />
-            : null
-    );
-}
-
-function NextProject(props: {projectIndex: number}) {
-    const nextProject = getProject(props.projectIndex - 1);
-
-    return (
-        nextProject ?
-            <LinkToProject project={nextProject} alignRight={true} subtitle={"Next project"} />
-            : null
-    );
-}
-
-function LinkToProject(props: {project: ProjectInfo, alignRight: boolean, subtitle: string}) {
-    const alignment = props.alignRight ? "text-end" : "text-start";
-
-    return (
-        <div className={`${alignment} flex-grow-1`}>
-            <Link to={`/projects/${props.project.id}`} className="fs-5 heading link">
-                {props.project.name}
-            </Link>
-            <p className="project-page__accent">{props.subtitle}</p>
-        </div>
-    );
-}

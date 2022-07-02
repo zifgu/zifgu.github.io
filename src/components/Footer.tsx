@@ -25,9 +25,10 @@ export function Footer() {
                     }
                 </div>
                 <p className="footer__acknowledgments">
+                    Copyright <span className="fs-5">&copy;</span> 2021 Floria Gu.
+                </p>
+                <p className="footer__acknowledgments">
                     <Link to={"/attribution"} className="footer__attribution-link">Attributions</Link>
-                    {" | Copyright "}
-                    <span className="fs-5">&copy;</span> 2021 Floria Gu.
                 </p>
             </Col>
         </Row>

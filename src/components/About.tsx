@@ -4,13 +4,14 @@ import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import "../css/Global.css";
 import "../css/About.css";
-import { animated, useSpring } from "react-spring";
+import { animated, config, useSpring } from "react-spring";
 import { AnimateWhenReached } from "./Animation";
 
 function AboutContent({reached}: {reached: boolean}) {
     const styles = useSpring({
         transform: reached ? "translateY(0)" : "translateY(15%)",
         opacity: reached ? 1 : 0,
+        config: config.gentle,
         delay: 0,
     });
 
@@ -24,9 +25,9 @@ function AboutContent({reached}: {reached: boolean}) {
                 />
             </Col>
             <animated.div className="col-md-6 py-5 py-md-0" style={styles}>
-                <h4 className="my-3">
+                <h2 className="my-3">
                     About
-                </h4>
+                </h2>
                 <p>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
                     labore et dolore magna aliqua. Lacinia at quis risus sed vulputate odio ut.

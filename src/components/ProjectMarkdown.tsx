@@ -19,7 +19,7 @@ function Heading(props: { as: any, id?: string, children: ReactNode, changedView
                 props.changedViewCallback(headingId, inView);
             }}
         >
-            <Component id={headingId}>
+            <Component id={headingId} className="mt-4 mb-3">
                 {props.children}
             </Component>
         </InView>

@@ -5,16 +5,14 @@ import Badge from "react-bootstrap/Badge";
 import { Link } from "react-router-dom";
 import { formatProjectTime, getAllProjects, ProjectInfo } from "../data/ProjectInfo";
 import "../css/Projects.css";
-import { animated, useSpring } from "react-spring";
-import { AnimateWhenHovered, AnimateWhenReached } from "./Animation";
+import { animated, useSpring, config } from "react-spring";
+import { AnimateWhenHovered } from "./Animation";
 
 export function Projects() {
     return (
         <Row id="projects" className="py-5 px-2 px-md-5 gy-4" xs={1}>
             <Col>
-                <h4>
-                    Projects
-                </h4>
+                <h2>Projects</h2>
                 <p className="projects__subtitle">
                     Here are some of my programming projects.
                 </p>
@@ -23,9 +21,9 @@ export function Projects() {
                 <Row xs={1} md={2} className="justify-content-around gx-4 gy-5">
                     {
                         getAllProjects()
-                            .map((project: ProjectInfo, index: number) => (
+                            .map((project: ProjectInfo) => (
                                 <Col md={5} key={project.name}>
-                                    <ProjectCard project={project} index={index}/>
+                                    <ProjectCard project={project}/>
                                 </Col>
                             ))
                     }
@@ -35,7 +33,7 @@ export function Projects() {
     );
 }
 
-function ProjectCard(props: {project: ProjectInfo, index: number}) {
+function ProjectCard(props: {project: ProjectInfo}) {
     const projectLink = `/projects/${props.project.id}`;
 
     return (
@@ -45,25 +43,18 @@ function ProjectCard(props: {project: ProjectInfo, index: number}) {
                     (hover: boolean) => <ProjectCardImage hover={hover} link={projectLink} src={props.project.headerImageSrc}/>
                 }
             </AnimateWhenHovered>
-            <AnimateWhenReached threshold={0.4}>
-                {
-                    (reached: boolean) => (
-                        <ProjectCardBody
-                            project={props.project}
-                            index={props.index}
-                            link={projectLink}
-                            reached={reached}
-                        />
-                    )
-                }
-            </AnimateWhenReached>
+            <ProjectCardBody
+                project={props.project}
+                link={projectLink}
+            />
         </div>
     );
 }
 
-function ProjectCardImage(props: {hover: boolean, link: string, src: string}) {
+function ProjectCardImage(props: {link: string, src: string, hover: boolean}) {
     const style = useSpring({
-        transform: props.hover ? "scale(0.925)" : "scale(1)",
+        transform: props.hover ? "translateY(-20px)" : "translateY(0)",
+        config: config.gentle,
     });
 
     return (
@@ -77,14 +68,9 @@ function ProjectCardImage(props: {hover: boolean, link: string, src: string}) {
     );
 }
 
-function ProjectCardBody(props: {project: ProjectInfo, link: string, index: number, reached: boolean}) {
-    const bodySpring = useSpring({
-        transform: props.reached ? "translateY(0)" : "translateY(20%)",
-        opacity: props.reached ? 1 : 0,
-    });
-
+function ProjectCardBody(props: {project: ProjectInfo, link: string}) {
     return (
-        <animated.div className="pt-4 h-100" style={bodySpring}>
+        <div className="pt-3 h-100">
             <div className="d-flex justify-content-between">
                 <div className="text-start project-card__details">
                     {props.project.affiliation}
@@ -108,7 +94,7 @@ function ProjectCardBody(props: {project: ProjectInfo, link: string, index: numb
                     ))
                 }
             </div>
-        </animated.div>
+        </div>
     );
 }
 

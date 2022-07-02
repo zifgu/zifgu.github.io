@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Inter");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&family=Montserrat&family=Poppins');
 
 /* || GENERAL */
 
@@ -12,7 +13,7 @@
 }
 
 body {
-    --text-font: "Inter", var(--bs-body-font-family);
+    --text-font: var(--bs-body-font-family);
     --accent-font: "Roboto Mono", var(--bs-body-font-family);
 
     --bg-color: var(--light-bg);
@@ -51,7 +52,7 @@ a {
 
 /* Separate these rules because table of contents links use the .link class, but we don't want them to have the default colour */
 a, .link {
-    transition: color 150ms ease-out;
+    transition: color 100ms ease-out;
 }
 
 a:hover, .link:hover {
