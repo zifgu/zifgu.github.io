@@ -1,11 +1,9 @@
-import { FaLinkedinIn } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
-import { IoMail } from "react-icons/io5";
-import { IconType } from "react-icons";
+import {faGithub, faLinkedin} from "@fortawesome/free-brands-svg-icons";
+import {faEnvelope, IconDefinition} from "@fortawesome/free-solid-svg-icons";
 
 export interface SocialMedia {
     site: string,
-    icon: IconType,
+    icon: IconDefinition,
     link: string,
     contactName: string,
     includeInHeader: boolean,
@@ -14,21 +12,21 @@ export interface SocialMedia {
 const socialMedia: SocialMedia[] = [
     {
         site: "GitHub",
-        icon: FaGithub,
+        icon: faGithub,
         link: "https://github.com/zifgu",
         contactName: "zifgu",
         includeInHeader: true,
     },
     {
         site: "Email",
-        icon: IoMail,
+        icon: faEnvelope,
         link: "mailto: gfzting@gmail.com",
         contactName: "gfzting@gmail.com",
         includeInHeader: true,
     },
     {
         site: "LinkedIn",
-        icon: FaLinkedinIn,
+        icon: faLinkedin,
         link: "https://www.linkedin.com/in/floria-gu-a60a52200/",
         contactName: "Floria Gu",
         includeInHeader: true,

@@ -38,6 +38,9 @@
 /* DARK MODE TOGGLE */
 
 .nav__mode-btn {
+    width: 2.25em;
+    height: 2.25em;
+
     position: relative;
     display: inline-flex;
     align-items: center;
@@ -68,7 +71,7 @@
 
 .nav__mode-btn svg {
     /* Fade icon colour when hovered over */
-    transition: fill 500ms ease-out;
+    transition: color 500ms ease-out;
 }
 
 .dark-mode-btn::before {
@@ -76,7 +79,7 @@
 }
 
 .dark-mode-btn:hover svg {
-    fill: var(--dark-text);
+    color: var(--dark-text);
 }
 
 .light-mode-btn::before {
@@ -84,5 +87,5 @@
 }
 
 .light-mode-btn:hover svg {
-    fill: var(--light-text);
+    color: var(--light-text);
 }

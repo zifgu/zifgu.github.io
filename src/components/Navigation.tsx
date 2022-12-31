@@ -1,11 +1,11 @@
-import React, { PropsWithChildren, ReactElement, useEffect, useState } from "react";
+import React, { PropsWithChildren, useEffect, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { HashLink } from 'react-router-hash-link';
 import { resumeLink } from "../data/BasicInfo";
-import { IoMoon, IoSunny } from "react-icons/io5";
-import { FiMenu } from "react-icons/fi";
 import "../css/Navigation.css";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faMoon, faSun, faBars, IconDefinition} from "@fortawesome/free-solid-svg-icons";
 
 export const darkModeClass: string = "dark";
 
@@ -33,18 +33,18 @@ function ToggleModeButton() {
 
     return (
         darkMode ?
-            <IconButton className="light-mode-btn" icon={<IoSunny size={20}/>} onClick={toggleDarkMode}/> :
-            <IconButton className="dark-mode-btn" icon={<IoMoon size={20}/>} onClick={toggleDarkMode}/>
+            <IconButton className="light-mode-btn" icon={faSun} onClick={toggleDarkMode}/> :
+            <IconButton className="dark-mode-btn" icon={faMoon} onClick={toggleDarkMode}/>
     );
 }
 
-function IconButton(props: {className: string, icon: ReactElement, onClick: () => void}) {
+function IconButton(props: {className: string, icon: IconDefinition, onClick: () => void}) {
     return (
         <div
             className={"nav__mode-btn " + props.className}
             onClick={props.onClick}
         >
-            {props.icon}
+            <FontAwesomeIcon icon={props.icon} size="lg"/>
         </div>
     );
 }
@@ -63,7 +63,7 @@ export function NavBar() {
         <Navbar id="top" expand="md">
             <span className="nav__title ms-2">F.</span>
             <Navbar.Toggle aria-controls="navbar-nav">
-                <FiMenu size={20}/>
+                <FontAwesomeIcon icon={faBars} />
             </Navbar.Toggle>
             <Navbar.Collapse id="navbar-nav">
                 <Nav className="ms-auto align-items-center gap-3">

@@ -5,14 +5,13 @@ import "../css/Global.css";
 import "../css/Hero.css";
 import { getSocialsInHeader, SocialMedia } from "../data/SocialMedia";
 import { WaveGraphic } from "./WaveGraphic";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
-function HeroIcon({as, link, ...props}: any) {
-    const Component = as;
-
+function HeroIcon({icon, link}: any) {
     return (
         <div className="hero__icon-wrapper">
             <a href={link} target="_blank" rel="noreferrer">
-                <Component className="hero__icon" {...props}/>
+                <FontAwesomeIcon className="hero__icon" icon={icon} size="xl"/>
             </a>
         </div>
     );
@@ -34,9 +33,8 @@ export function Hero() {
                             return (
                                 <HeroIcon
                                     key={socialMedia.site}
-                                    as={socialMedia.icon}
+                                    icon={socialMedia.icon}
                                     link={socialMedia.link}
-                                    size={25}
                                 />
                             );
                         })

@@ -59,7 +59,7 @@ function ProjectCard(props: {project: ProjectInfo}) {
             <div className="mt-auto mb-2 d-flex flex-row gap-4">
                 {
                     props.project.links.map((link: LinkInfo) => (
-                        <a href={link.url} target="_blank">
+                        <a href={link.url} target="_blank" rel="noreferrer">
                             {link.name}
                         </a>
                     ))

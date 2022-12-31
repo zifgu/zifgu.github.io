@@ -4,7 +4,7 @@ import Col from "react-bootstrap/Col";
 import "../css/Global.css";
 import "../css/Footer.css";
 import { getSocials, SocialMedia } from "../data/SocialMedia";
-import { Link } from "react-router-dom";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export function Footer() {
     return (
@@ -16,9 +16,8 @@ export function Footer() {
                             return (
                                 <FooterIcon
                                     key={socialMedia.site}
-                                    as={socialMedia.icon}
+                                    icon={socialMedia.icon}
                                     link={socialMedia.link}
-                                    size={25}
                                 />
                             );
                         })
@@ -27,20 +26,15 @@ export function Footer() {
                 <p className="footer__acknowledgments">
                     Copyright <span className="fs-5">&copy;</span> 2022 Floria Gu.
                 </p>
-                <p className="footer__acknowledgments">
-                    <Link to={"/attribution"} className="footer__attribution-link">Attributions</Link>
-                </p>
             </Col>
         </Row>
     );
 }
 
-function FooterIcon({as, link, ...props}: any) {
-    const Component = as;
-
+function FooterIcon({icon, link}: any) {
     return (
         <a href={link} target="_blank" rel="noreferrer" className="footer__icon">
-            <Component {...props}/>
+            <FontAwesomeIcon icon={icon} size="xl"/>
         </a>
     );
 }

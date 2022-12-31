@@ -51,8 +51,7 @@
 }
 
 .hero__icon {
-    fill: var(--text-color);
-    stroke: var(--text-color);
+    color: var(--text-color);
 }
 
 .hero__canvas-container {

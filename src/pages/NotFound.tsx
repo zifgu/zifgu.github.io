@@ -2,13 +2,14 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { HashLink } from "react-router-hash-link";
 import "../css/NotFound.css";
-import { BsStars } from "react-icons/bs";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faWandMagicSparkles} from "@fortawesome/free-solid-svg-icons";
 
 export function NotFound() {
     return (
-        <Row className="py-5 px-2" style={{height: "60vh"}}>
+        <Row className="py-5 px-2" style={{height: "75vh"}}>
             <Col className="d-flex flex-column text-center justify-content-center">
-                <BsStars size={75} className="mb-5 not-found__icon"/>
+                <FontAwesomeIcon className="mb-5 not-found__icon" icon={faWandMagicSparkles} size="5x" />
                 <h3>
                     Page not found
                 </h3>
