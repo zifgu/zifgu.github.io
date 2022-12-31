@@ -10,7 +10,7 @@ export function Footer() {
     return (
         <Row className="footer py-3">
             <Col>
-                <div className="mt-5 mb-4 icon-container footer__icon-container">
+                <div className="my-4 icon-container footer__icon-container">
                     {
                         getSocials().map((socialMedia: SocialMedia) => {
                             return (
@@ -25,7 +25,7 @@ export function Footer() {
                     }
                 </div>
                 <p className="footer__acknowledgments">
-                    Copyright <span className="fs-5">&copy;</span> 2021 Floria Gu.
+                    Copyright <span className="fs-5">&copy;</span> 2022 Floria Gu.
                 </p>
                 <p className="footer__acknowledgments">
                     <Link to={"/attribution"} className="footer__attribution-link">Attributions</Link>

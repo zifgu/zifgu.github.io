@@ -4,7 +4,7 @@ import React from "react";
 
 export function Attribution() {
     return (
-        <Row className="py-5 px-2 justify-content-center" style={{height: "75vh"}}>
+        <Row className="py-5 px-2 justify-content-center" style={{height: "60vh"}}>
             <Col md={7}>
                 <h3 className="my-3">
                     Attributions

@@ -3,11 +3,12 @@
     font-family: var(--accent-font);
 }
 
-/* || NAVBAR LINKS (About, Projects, etc) */
+/* NAVBAR LINKS (About, Projects, etc) */
 
 .nav__link {
     color: var(--text-color);
     opacity: 70%;
+    font-weight: bold;
     text-decoration: none;
 }
 
@@ -34,7 +35,7 @@
     transform: translateX(0);
 }
 
-/* || DARK MODE TOGGLE */
+/* DARK MODE TOGGLE */
 
 .nav__mode-btn {
     position: relative;

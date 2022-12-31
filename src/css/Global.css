@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Inter");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
 @import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&family=Montserrat&family=Poppins');
+@import url("https://fonts.googleapis.com/css?family=Source+Serif+Pro");
 
-/* || GENERAL */
+/* GENERAL */
 
 :root {
     --light-bg: #FDFDFC;
@@ -10,29 +11,34 @@
 
     --dark-bg: #181621;
     --dark-text: #eeeded;
+
+    --accent-light: #84c9aa;
+    --accent-dark: #478566;
 }
 
 body {
-    --text-font: var(--bs-body-font-family);
-    --accent-font: "Roboto Mono", var(--bs-body-font-family);
+    --text-font: "Source Serif Pro", serif;
+    --accent-font: var(--text-font);
 
     --bg-color: var(--light-bg);
     --text-color: var(--light-text);
     --text-muted-color: #AAACA5;
-    --badge-gradient: linear-gradient(90deg, #88AB96, #9FDDD9);
+    --border-color: #DEE0E0;
+
     --hero-icon-gradient: linear-gradient(135deg, #ee9bec, #79d7d0);
-    --link-color: #598C51;
-    --link-hover-color: #88C6A4;
+    --link-color: var(--accent-dark);
+    --link-hover-color: var(--accent-light);
 }
 
 body.dark {
     --bg-color: var(--dark-bg);
     --text-color: var(--dark-text);
-    --text-muted-color: #AAACA5;
-    --badge-gradient: linear-gradient(90deg, #88AB96, #9FDDD9);
+    --text-muted-color: #BCC2BF;
+    --border-color: #373942;
+
     --hero-icon-gradient: linear-gradient(135deg, #d779d5, #4fbbb2);
-    --link-color: #88C6A4;
-    --link-hover-color: #598C51;
+    --link-color: var(--accent-light);
+    --link-hover-color: var(--accent-dark);
 }
 
 body {
@@ -70,7 +76,7 @@ figcaption {
     opacity: 80%;
 }
 
-/* || UTILITIES */
+/* UTILITIES */
 
 .icon-container {
     display: flex;

@@ -1,5 +1,5 @@
 import { FaLinkedinIn } from "react-icons/fa";
-import { FiGithub } from "react-icons/fi";
+import { FaGithub } from "react-icons/fa";
 import { IoMail } from "react-icons/io5";
 import { IconType } from "react-icons";
 
@@ -14,7 +14,7 @@ export interface SocialMedia {
 const socialMedia: SocialMedia[] = [
     {
         site: "GitHub",
-        icon: FiGithub,
+        icon: FaGithub,
         link: "https://github.com/zifgu",
         contactName: "zifgu",
         includeInHeader: true,

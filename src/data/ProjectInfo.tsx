@@ -39,7 +39,7 @@ export function formatProjectTime(project: ProjectInfo): string {
 }
 
 function formatMonthYear(date: Date): string {
-    return date.toLocaleString("default", {month: "2-digit", year: "numeric"});
+    return date.toLocaleString("default", {month: "short", year: "numeric"});
 }
 
 const projects: ProjectInfo[] = [
@@ -111,7 +111,7 @@ const projects: ProjectInfo[] = [
         name: "Insight UBC",
         start: new Date(2021, 8),
         finished: new Date(2022, 11),
-        affiliation: "CPSC 310: Introduction to Software Engineering",
+        affiliation: "Course Project",
         links: [],
         headerImageSrc: InsightUBCHeading,
         summary: "REST API that manages and supports SQL-like queries over UBC course datasets.",
@@ -144,7 +144,7 @@ const projects: ProjectInfo[] = [
         name: "Fanworks Site",
         start: new Date(2021, 4),
         finished: new Date(2021, 5),
-        affiliation: "CPSC 304: Introduction to Relational Databases",
+        affiliation: "Course Project",
         links: [],
         headerImageSrc: FanworksSiteHeading,
         summary: "Web application for sharing fan-made fiction and artworks, inspired by Archive of Our Own.",
@@ -181,7 +181,7 @@ const projects: ProjectInfo[] = [
         name: "Timetable Generator",
         start: new Date(2020, 8),
         finished: new Date(2020, 11),
-        affiliation: "CPSC 210: Software Construction",
+        affiliation: "Course Project",
         links: [
             {
                 name: "GitHub",

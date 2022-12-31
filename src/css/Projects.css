@@ -3,6 +3,11 @@
     font-style: italic;
 }
 
+.project-card {
+    border: 1px solid var(--border-color);
+    border-radius: 0.3rem;
+}
+
 .project-card__image {
     width: 100%;
     border-radius: .25rem;
@@ -17,10 +22,4 @@
     /* Override default link colour and underline */
     color: inherit;
     text-decoration: none;
-}
-
-.project-card__technology {
-    background: var(--badge-gradient);
-    font-size: 0.9em;
-    color: var(--bg-color);
 }

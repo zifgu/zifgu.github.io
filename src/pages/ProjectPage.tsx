@@ -3,8 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { HashLink } from "react-router-hash-link";
-import { Link, useParams } from "react-router-dom";
-import { formatProjectTime, getProject, indexOfProject, LinkInfo, ProjectInfo } from "../data/ProjectInfo";
+import { useParams } from "react-router-dom";
+import { formatProjectTime, getProject, indexOfProject, ProjectInfo } from "../data/ProjectInfo";
 import { ProjectMarkdown } from "../components/ProjectMarkdown";
 import { TableOfContents, TableOfContentsRef } from "../components/TableOfContents";
 import { NotFound } from "./NotFound";
@@ -65,7 +65,6 @@ function ProjectPageContent(props: {project: ProjectInfo}) {
                 <div className="project-page__accent">
                     {formatProjectTime(props.project)}
                 </div>
-                <ExternalLinks links={props.project.links}/>
                 <ProjectMarkdown
                     markdown={markdown}
                     changedViewCallback={onHeadingChangedView}
@@ -74,31 +73,3 @@ function ProjectPageContent(props: {project: ProjectInfo}) {
         </Row>
     );
 }
-
-function ExternalLinks(props: {links: LinkInfo[]}) {
-    return (
-        <div className="mt-2 mb-4 project-page__links-container">
-            {
-                props.links.map((link: LinkInfo, index: number) => {
-                    const divider = index > 0 ? " / " : "";
-
-                    return (
-                        <span key={link.name}>
-                            {divider}
-                            <ExternalLink link={link}/>
-                        </span>
-                    );
-                })
-            }
-        </div>
-    );
-}
-
-function ExternalLink(props: {link: LinkInfo}) {
-    return (
-        <a href={props.link.url} className="project-page__project-link">
-            {props.link.name}
-        </a>
-    );
-}
-

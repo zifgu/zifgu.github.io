@@ -1,28 +1,23 @@
 import React from "react";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Badge from "react-bootstrap/Badge";
+import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom";
-import { formatProjectTime, getAllProjects, ProjectInfo } from "../data/ProjectInfo";
+import {formatProjectTime, getAllProjects, LinkInfo, ProjectInfo} from "../data/ProjectInfo";
 import "../css/Projects.css";
-import { animated, useSpring, config } from "react-spring";
-import { AnimateWhenHovered } from "./Animation";
 
 export function Projects() {
     return (
         <Row id="projects" className="py-5 px-2 px-md-5 gy-4" xs={1}>
             <Col>
-                <h2>Projects</h2>
-                <p className="projects__subtitle">
-                    Here are some of my programming projects.
-                </p>
+                <h2>Programming</h2>
             </Col>
             <Col>
-                <Row xs={1} md={2} className="justify-content-around gx-4 gy-5">
+                <Row className="g-4">
                     {
                         getAllProjects()
                             .map((project: ProjectInfo) => (
-                                <Col md={5} key={project.name}>
+                                <Col md={4} key={project.name}>
                                     <ProjectCard project={project}/>
                                 </Col>
                             ))
@@ -37,41 +32,15 @@ function ProjectCard(props: {project: ProjectInfo}) {
     const projectLink = `/projects/${props.project.id}`;
 
     return (
-        <div>
-            <AnimateWhenHovered>
-                {
-                    (hover: boolean) => <ProjectCardImage hover={hover} link={projectLink} src={props.project.headerImageSrc}/>
-                }
-            </AnimateWhenHovered>
-            <ProjectCardBody
-                project={props.project}
-                link={projectLink}
-            />
-        </div>
-    );
-}
-
-function ProjectCardImage(props: {link: string, src: string, hover: boolean}) {
-    const style = useSpring({
-        transform: props.hover ? "scale(0.925)" : "scale(1)",
-        config: config.gentle,
-    });
-
-    return (
-        <Link to={props.link}>
-            <animated.img
-                src={props.src}
-                className="img-fluid project-card__image"
-                style={style}
-            />
-        </Link>
-    );
-}
-
-function ProjectCardBody(props: {project: ProjectInfo, link: string}) {
-    return (
-        <div className="pt-3 h-100">
-            <div className="d-flex justify-content-between">
+        <div className="h-100 d-flex flex-column p-3 project-card">
+            <Link to={projectLink}>
+                <Image
+                    fluid
+                    src={props.project.headerImageSrc}
+                    className="project-card__image"
+                />
+            </Link>
+            <div className="mt-3 d-flex justify-content-between">
                 <div className="text-start project-card__details">
                     {props.project.affiliation}
                 </div>
@@ -79,29 +48,23 @@ function ProjectCardBody(props: {project: ProjectInfo, link: string}) {
                     {formatProjectTime(props.project)}
                 </div>
             </div>
-            <h5>
-                <Link to={props.link} className="project-card__title">
+            <h5 className="mb-3">
+                <Link to={projectLink} className="project-card__title">
                     {props.project.name}
                 </Link>
             </h5>
-            <p className="my-4">
+            <p>
                 {props.project.summary}
             </p>
-            <div className="d-flex flex-wrap gap-2">
+            <div className="mt-auto mb-2 d-flex flex-row gap-4">
                 {
-                    props.project.technologies.map((technology: string) => (
-                        <TechnologyBadge key={technology} technology={technology}/>
+                    props.project.links.map((link: LinkInfo) => (
+                        <a href={link.url} target="_blank">
+                            {link.name}
+                        </a>
                     ))
                 }
             </div>
         </div>
-    );
-}
-
-function TechnologyBadge(props: {technology: string}) {
-    return (
-        <Badge pill className="px-3 project-card__technology">
-            {props.technology}
-        </Badge>
     );
 }

@@ -3,14 +3,6 @@
     color: var(--text-muted-color);
 }
 
-.project-page__links-container {
-    font-family: var(--accent-font);
-}
-
-.project-page__project-link {
-    font-weight: bold;
-}
-
 .project-page__toc-container {
     position: sticky;
     top: 30%;

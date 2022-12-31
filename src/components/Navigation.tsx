@@ -60,7 +60,7 @@ function NavItem(props: PropsWithChildren<any>) {
 export function NavBar() {
     // TODO: ideally, dark mode toggle should be outside navbar when collapsed
     return (
-        <Navbar expand="md">
+        <Navbar id="top" expand="md">
             <span className="nav__title ms-2">F.</span>
             <Navbar.Toggle aria-controls="navbar-nav">
                 <FiMenu size={20}/>
@@ -70,9 +70,9 @@ export function NavBar() {
                     <NavItem>
                         <HashLink className="nav__link" to="/#top">Home</HashLink>
                     </NavItem>
-                    <NavItem>
-                        <HashLink className="nav__link" to="/#about">About</HashLink>
-                    </NavItem>
+                    {/*<NavItem>*/}
+                    {/*    <HashLink className="nav__link" to="/#about">About</HashLink>*/}
+                    {/*</NavItem>*/}
                     <NavItem>
                         <HashLink className="nav__link" to="/#projects">Projects</HashLink>
                     </NavItem>

@@ -6,7 +6,6 @@ import "../css/Hero.css";
 import { getSocialsInHeader, SocialMedia } from "../data/SocialMedia";
 import { WaveGraphic } from "./WaveGraphic";
 
-// TODO: figure out how to enforce types on polymorphic components
 function HeroIcon({as, link, ...props}: any) {
     const Component = as;
 
@@ -21,13 +20,10 @@ function HeroIcon({as, link, ...props}: any) {
 
 export function Hero() {
     return (
-        <Row id="top" className="vh-100">
-            <Col
-                xs md={4}
-                className="hero__text mx-5"
-            >
+        <Row style={{height: "90vh"}}>
+            <Col xs={9} md={4} className="hero__text mx-5">
                 <h1>
-                    Hi, I'm Floria
+                    Hi, I'm Floria.
                 </h1>
                 <p className="my-4 hero__subtitle">
                     I'm a Computer Science student at the University of British Columbia.

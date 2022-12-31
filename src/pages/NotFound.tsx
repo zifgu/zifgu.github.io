@@ -6,7 +6,7 @@ import { BsStars } from "react-icons/bs";
 
 export function NotFound() {
     return (
-        <Row className="py-5 px-2" style={{height: "75vh"}}>
+        <Row className="py-5 px-2" style={{height: "60vh"}}>
             <Col className="d-flex flex-column text-center justify-content-center">
                 <BsStars size={75} className="mb-5 not-found__icon"/>
                 <h3>
