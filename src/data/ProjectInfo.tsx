@@ -77,7 +77,7 @@ const projects: ProjectInfo[] = [
             },
         ],
         technologies: ["Three.js", "React", "JavaScript"],
-        summary: "Interactive 3D visualization for teaching geomatics students about models of Earth.",
+        summary: "An interactive 3D visualization for teaching geomatics students about models of Earth.",
         headerImageSrc: OERGeomaticsHeading,
     },
     {
@@ -100,8 +100,7 @@ const projects: ProjectInfo[] = [
             },
         ],
         technologies: ["React", "JavaScript", "Bootstrap", "Figma", "OpenAI"],
-        summary: "Web app that can detect the emotion in text messages and suggest ways to respond. Created for" +
-            " the cmd-f 2022 hackathon.",
+        summary: "A web app that identifies the emotion in text messages and suggests responses.",
         headerImageSrc: EmpathHeading,
     },
     {
@@ -112,7 +111,7 @@ const projects: ProjectInfo[] = [
         affiliation: "Course Project",
         links: [],
         headerImageSrc: InsightUBCHeading,
-        summary: "REST API that manages and supports SQL-like queries over UBC course datasets.",
+        summary: "A REST API that supports custom queries over UBC course datasets.",
         technologies: ["TypeScript", "Node.js", "Express"],
     },
     {
@@ -132,7 +131,7 @@ const projects: ProjectInfo[] = [
             },
         ],
         headerImageSrc: CodenamesSingleplayerHeading,
-        summary: "Online implementation of the word-guessing game Codenames.",
+        summary: "A website for playing the word-guessing game Codenames online.",
         technologies: ["React", "TypeScript", "Bootstrap", "HTML/CSS"],
     },
     {
@@ -143,7 +142,7 @@ const projects: ProjectInfo[] = [
         affiliation: "Course Project",
         links: [],
         headerImageSrc: FanworksSiteHeading,
-        summary: "Web application for sharing fan-made fiction and artworks, inspired by Archive of Our Own.",
+        summary: "A website for sharing fan-made fiction and artworks, inspired by Archive of Our Own.",
         technologies: ["Java", "SQL", "Oracle Database", "HTML/CSS"],
     },
     {
@@ -166,7 +165,7 @@ const projects: ProjectInfo[] = [
                 url: "https://drive.google.com/drive/folders/1xfuL2QHYvmM3c6x0N50FOCcnUQd9V90v",
             },
         ],
-        summary: "3D puzzle game about exploring mindscapes to crack a case – with a cooperative twist.",
+        summary: "A 3D puzzle game about exploring mindscapes to crack a case – with a cooperative twist.",
         technologies: ["Unity", "C#"],
         headerImageSrc: TransductionHeading,
     },
@@ -183,7 +182,7 @@ const projects: ProjectInfo[] = [
             },
         ],
         headerImageSrc: TimetableCalculatorHeading,
-        summary: "Desktop application to help students automatically schedule their course timetables.",
+        summary: "A desktop app to help UBC students create conflict-free course schedules.",
         technologies: ["Java", "Swing"],
     },
 ]
