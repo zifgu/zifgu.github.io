@@ -56,7 +56,7 @@ const projects: ProjectInfo[] = [
             },
         ],
         headerImageSrc: PersonalWebsiteHeading,
-        summary: "This website! A personal site and portfolio.",
+        summary: "Personal site and portfolio.",
         technologies: ["React", "TypeScript", "Bootstrap", "HTML/CSS", "GitHub Pages"],
         markdown: testMarkdown,
     },
