@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css?family=Inter");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono");
+@import url('https://fonts.googleapis.com/css2?family=Libre+Franklin&family=Montserrat&family=Poppins');
+@import url("https://fonts.googleapis.com/css?family=Source+Serif+Pro");
+
+/* GENERAL */
+
+:root {
+    --light-bg: #FDFDFC;
+    --light-text: #0F0E18;
+
+    --dark-bg: #181621;
+    --dark-text: #eeeded;
+
+    --accent-light: #84c9aa;
+    --accent-dark: #478566;
+}
+
+body {
+    --text-font: "Source Serif Pro", serif;
+    --accent-font: var(--text-font);
+
+    --bg-color: var(--light-bg);
+    --text-color: var(--light-text);
+    --text-muted-color: #AAACA5;
+    --border-color: #DEE0E0;
+
+    --hero-icon-gradient: linear-gradient(135deg, #ee9bec, #79d7d0);
+    --link-color: var(--accent-dark);
+    --link-hover-color: var(--accent-light);
+}
+
+body.dark {
+    --bg-color: var(--dark-bg);
+    --text-color: var(--dark-text);
+    --text-muted-color: #BCC2BF;
+    --border-color: #373942;
+
+    --hero-icon-gradient: linear-gradient(135deg, #d779d5, #4fbbb2);
+    --link-color: var(--accent-light);
+    --link-hover-color: var(--accent-dark);
+}
+
+body {
+    font-family: var(--text-font);
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+h1, h2, h3, h4, h5, h6, .heading {
+    font-family: var(--accent-font);
+    font-weight: bold;
+}
+
+a {
+    color: var(--link-color);
+}
+
+/* Separate these rules because table of contents links use the .link class, but we don't want them to have the default colour */
+a, .link {
+    transition: color 100ms ease-out;
+}
+
+a:hover, .link:hover {
+    color: var(--link-hover-color);
+    text-decoration: none;
+}
+
+code {
+    font-size: initial;
+}
+
+figcaption {
+    font-size: 0.9em;
+    padding: 0 0.5rem;
+    opacity: 80%;
+}
+
+/* UTILITIES */
+
+.icon-container {
+    display: flex;
+    gap: 1rem;
+}

@@ -1,0 +1,26 @@
+.project-page__accent {
+    font-family: var(--accent-font);
+    color: var(--text-muted-color);
+}
+
+.project-page__toc-container {
+    position: sticky;
+    top: 30%;
+
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.project-page__toc-link {
+    color: var(--text-muted-color);
+    text-decoration: none;
+}
+
+.project-page__active {
+    color: var(--text-color);
+    opacity: 90%;
+}

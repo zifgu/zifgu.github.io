@@ -1,0 +1,27 @@
+.projects__subtitle {
+    font-family: var(--accent-font);
+    font-style: italic;
+}
+
+.project-card {
+    border: 1px solid var(--border-color);
+    border-radius: 0.3rem;
+}
+
+.project-card__image {
+    object-fit: cover;
+    width: 100%;
+    aspect-ratio: 5 / 3;
+    border-radius: .25rem;
+}
+
+.project-card__details {
+    font-family: var(--accent-font);
+    color: var(--text-muted-color);
+}
+
+.project-card__title {
+    /* Override default link colour and underline */
+    color: inherit;
+    text-decoration: none;
+}

@@ -1,0 +1,13 @@
+.about__image {
+    /* Center the image horizontally */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    box-shadow: 0 16px 20px -4px rgb(0 0 0 / 10%), 0 40px 50px rgb(0 0 0 / 10%);
+    border-radius: .25rem;
+}
+
+.dark .about__image {
+    box-shadow: none;
+}
