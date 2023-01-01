@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.css": "/static/css/main.2e18221e.css",
-    "main.js": "/static/js/main.928b7028.js",
+    "main.css": "/static/css/main.8a47631d.css",
+    "main.js": "/static/js/main.bda3c944.js",
     "static/js/787.5809834d.chunk.js": "/static/js/787.5809834d.chunk.js",
     "static/media/TransductionHeading.png": "/static/media/TransductionHeading.01e624d3d424ac0a45bc.png",
     "static/media/OERGeomaticsHeading.png": "/static/media/OERGeomaticsHeading.8f6ef50c5c179d8ee2c0.png",
-    "static/media/PersonalWebsiteHeading.png": "/static/media/PersonalWebsiteHeading.313499f2fe225f6dbbab.png",
+    "static/media/PersonalWebsiteHeading.png": "/static/media/PersonalWebsiteHeading.571413bf6d102f558b82.png",
     "static/media/FanworksSiteHeading.png": "/static/media/FanworksSiteHeading.030ac508ffd21fa1e205.png",
     "static/media/EmpathHeading.png": "/static/media/EmpathHeading.5d12e7edaaff1bfeb8cc.png",
     "static/media/CodenamesSingleplayerHeading.png": "/static/media/CodenamesSingleplayerHeading.77e0d1330fbc56f8a397.png",
@@ -13,12 +13,12 @@
     "static/media/InsightUBCHeading.png": "/static/media/InsightUBCHeading.efadffde14e466938afc.png",
     "static/media/testMarkdown.md": "/static/media/testMarkdown.97a2a23b651e521c9214.md",
     "index.html": "/index.html",
-    "main.2e18221e.css.map": "/static/css/main.2e18221e.css.map",
-    "main.928b7028.js.map": "/static/js/main.928b7028.js.map",
+    "main.8a47631d.css.map": "/static/css/main.8a47631d.css.map",
+    "main.bda3c944.js.map": "/static/js/main.bda3c944.js.map",
     "787.5809834d.chunk.js.map": "/static/js/787.5809834d.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.2e18221e.css",
-    "static/js/main.928b7028.js"
+    "static/css/main.8a47631d.css",
+    "static/js/main.bda3c944.js"
   ]
 }
