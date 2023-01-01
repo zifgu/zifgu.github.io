@@ -51,7 +51,7 @@ const projects: ProjectInfo[] = [
         affiliation: "Personal Project",
         links: [
             {
-                name: "GitHub",
+                name: "Source",
                 url: "https://github.com/zifgu/zifgu.github.io",
             },
         ],
@@ -68,8 +68,8 @@ const projects: ProjectInfo[] = [
         affiliation: "UBC Emerging Media Lab",
         links: [
             {
-                name: "Visualization",
-                url: "https://ubc-geomatics-textbook.github.io/geomatics-textbook/viz/geodesy-viz/",
+                name: "View",
+                url: "https://www.opengeomatics.ca/viz/geodesy-viz/",
             },
             {
                 name: "Website",
@@ -87,16 +87,16 @@ const projects: ProjectInfo[] = [
         affiliation: "cmd-f 2022 Hackathon",
         links: [
             {
-                name: "App",
+                name: "View",
                 url: "https://me-an-empath.netlify.app/",
+            },
+            {
+                name: "Source",
+                url: "https://github.com/zifgu/cmd-f-2022",
             },
             {
                 name: "Devpost",
                 url: "https://devpost.com/software/me-an-empath",
-            },
-            {
-                name: "GitHub",
-                url: "https://github.com/zifgu/cmd-f-2022",
             },
         ],
         technologies: ["React", "JavaScript", "Bootstrap", "Figma", "OpenAI"],
@@ -123,11 +123,11 @@ const projects: ProjectInfo[] = [
         affiliation: "Personal Project",
         links: [
             {
-                name: "Demo",
+                name: "View",
                 url: "https://rcodenames.netlify.app/",
             },
             {
-                name: "GitHub",
+                name: "Source",
                 url: "https://github.com/zifgu/react-codenames-app",
             },
         ],
@@ -154,15 +154,15 @@ const projects: ProjectInfo[] = [
         affiliation: "UBC Game Development Club",
         links: [
             {
-                name: "Website",
-                url: "https://www.ubcgamedev.com/transduction",
-            },
-            {
                 name: "Trailer",
                 url: "https://youtu.be/gGJgE94JCxg",
             },
             {
-                name: "Demos",
+                name: "Website",
+                url: "https://www.ubcgamedev.com/transduction",
+            },
+            {
+                name: "Videos",
                 url: "https://drive.google.com/drive/folders/1xfuL2QHYvmM3c6x0N50FOCcnUQd9V90v",
             },
         ],
@@ -178,7 +178,7 @@ const projects: ProjectInfo[] = [
         affiliation: "Course Project",
         links: [
             {
-                name: "GitHub",
+                name: "Source",
                 url: "https://github.com/zifgu/cpsc210-project",
             },
         ],
