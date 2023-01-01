@@ -29,17 +29,24 @@ export function Projects() {
 }
 
 function ProjectCard(props: {project: ProjectInfo}) {
-    const projectLink = `/projects/${props.project.id}`;
+    let projectImage = (
+        <Image
+            fluid
+            src={props.project.headerImageSrc}
+            className="project-card__image"
+        />
+    );
+    let projectTitle = props.project.name;
+
+    const projectLink = `/projects/${props.project.id}`; // Only works if this project has a Markdown page
 
     return (
         <div className="h-100 d-flex flex-column p-3 project-card">
-            <Link to={projectLink}>
-                <Image
-                    fluid
-                    src={props.project.headerImageSrc}
-                    className="project-card__image"
-                />
-            </Link>
+            {
+                props.project.markdown ?
+                    <Link to={projectLink}>{projectImage}</Link> :
+                    projectImage
+            }
             <div className="mt-3 d-flex justify-content-between">
                 <div className="text-start project-card__details">
                     {props.project.affiliation}
@@ -49,9 +56,11 @@ function ProjectCard(props: {project: ProjectInfo}) {
                 </div>
             </div>
             <h5 className="mb-3">
-                <Link to={projectLink} className="project-card__title">
-                    {props.project.name}
-                </Link>
+                {
+                    props.project.markdown ?
+                        <Link to={projectLink} className="project-card__title">{projectTitle}</Link> :
+                        projectTitle
+                }
             </h5>
             <p>
                 {props.project.summary}

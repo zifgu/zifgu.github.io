@@ -22,7 +22,7 @@ export interface ProjectInfo {
     finished?: Date | "present",
     summary: ReactNode,
     links: LinkInfo[],
-    markdown: string,
+    markdown?: string,
     headerImageSrc: string,
     technologies: string[],
 }
@@ -79,7 +79,6 @@ const projects: ProjectInfo[] = [
         technologies: ["Three.js", "React", "JavaScript"],
         summary: "Interactive 3D visualization for teaching geomatics students about models of Earth.",
         headerImageSrc: OERGeomaticsHeading,
-        markdown: testMarkdown,
     },
     {
         id: "me-an-empath",
@@ -104,7 +103,6 @@ const projects: ProjectInfo[] = [
         summary: "Web app that can detect the emotion in text messages and suggest ways to respond. Created for" +
             " the cmd-f 2022 hackathon.",
         headerImageSrc: EmpathHeading,
-        markdown: testMarkdown,
     },
     {
         id: "insight-ubc",
@@ -116,7 +114,6 @@ const projects: ProjectInfo[] = [
         headerImageSrc: InsightUBCHeading,
         summary: "REST API that manages and supports SQL-like queries over UBC course datasets.",
         technologies: ["TypeScript", "Node.js", "Express"],
-        markdown: testMarkdown,
     },
     {
         id: "codenames-app",
@@ -137,7 +134,6 @@ const projects: ProjectInfo[] = [
         headerImageSrc: CodenamesSingleplayerHeading,
         summary: "Online implementation of the word-guessing game Codenames.",
         technologies: ["React", "TypeScript", "Bootstrap", "HTML/CSS"],
-        markdown: testMarkdown,
     },
     {
         id: "fanworks-site",
@@ -149,7 +145,6 @@ const projects: ProjectInfo[] = [
         headerImageSrc: FanworksSiteHeading,
         summary: "Web application for sharing fan-made fiction and artworks, inspired by Archive of Our Own.",
         technologies: ["Java", "SQL", "Oracle Database", "HTML/CSS"],
-        markdown: testMarkdown,
     },
     {
         id: "transduction",
@@ -174,7 +169,6 @@ const projects: ProjectInfo[] = [
         summary: "3D puzzle game about exploring mindscapes to crack a case – with a cooperative twist.",
         technologies: ["Unity", "C#"],
         headerImageSrc: TransductionHeading,
-        markdown: testMarkdown,
     },
     {
         id: "timetable-generator",
@@ -191,7 +185,6 @@ const projects: ProjectInfo[] = [
         headerImageSrc: TimetableCalculatorHeading,
         summary: "Desktop application to help students automatically schedule their course timetables.",
         technologies: ["Java", "Swing"],
-        markdown: testMarkdown,
     },
 ]
 

@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import { HashLink } from "react-router-hash-link";
-import { useParams } from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import { formatProjectTime, getProject, indexOfProject, ProjectInfo } from "../data/ProjectInfo";
 import { ProjectMarkdown } from "../components/ProjectMarkdown";
 import { TableOfContents, TableOfContentsRef } from "../components/TableOfContents";
@@ -27,18 +27,23 @@ function ProjectPageContent(props: {project: ProjectInfo}) {
     const tableOfContents = useRef<TableOfContentsRef>(null);
 
     const [markdown, setMarkdown] = useState<string>("");
+    const navigate = useNavigate();
 
     useEffect(() => {
-        fetch(props.project.markdown)
-            .then((response: Response) => {
-                if (!response.ok) {
-                    throw new Error(`Error fetching markdown file ${props.project.markdown}: ${response.status} ${response.statusText}`);
-                }
+        if (props.project.markdown) {
+            fetch(props.project.markdown)
+                .then((response: Response) => {
+                    if (!response.ok) {
+                        throw new Error(`Error fetching markdown file ${props.project.markdown}: ${response.status} ${response.statusText}`);
+                    }
 
-                return response.text();
-            })
-            .then((text: string) => setMarkdown(text))
-            .catch((err) => console.error(err));
+                    return response.text();
+                })
+                .then((text: string) => setMarkdown(text))
+                .catch((err) => console.error(err));
+        } else {
+            navigate("/404");
+        }
     }, [props.project.markdown]);
 
     const onHeadingChangedView = (id: string, inView: boolean) => {
