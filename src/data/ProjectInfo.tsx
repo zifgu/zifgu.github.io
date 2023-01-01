@@ -7,7 +7,6 @@ import CodenamesSingleplayerHeading from "./images/heading/CodenamesSingleplayer
 import OERGeomaticsHeading from "./images/heading/OERGeomaticsHeading.png";
 import EmpathHeading from "./images/heading/EmpathHeading.png";
 import SAPAppHeading from "./images/heading/SAPAppHeading.png";
-import testMarkdown from "./testMarkdown.md";
 
 export interface LinkInfo {
     name: string,
@@ -58,7 +57,6 @@ const projects: ProjectInfo[] = [
         headerImageSrc: PersonalWebsiteHeading,
         summary: "A personal site and portfolio.",
         technologies: ["React", "TypeScript", "Bootstrap", "HTML/CSS", "GitHub Pages"],
-        markdown: testMarkdown,
     },
     {
         id: "oer-geomatics",
