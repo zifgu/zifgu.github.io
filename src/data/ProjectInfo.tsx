@@ -6,7 +6,7 @@ import PersonalWebsiteHeading from "./images/heading/PersonalWebsiteHeading.png"
 import CodenamesSingleplayerHeading from "./images/heading/CodenamesSingleplayerHeading.png";
 import OERGeomaticsHeading from "./images/heading/OERGeomaticsHeading.png";
 import EmpathHeading from "./images/heading/EmpathHeading.png";
-import InsightUBCHeading from "./images/heading/InsightUBCHeading.png";
+import SAPAppHeading from "./images/heading/SAPAppHeading.png";
 import testMarkdown from "./testMarkdown.md";
 
 export interface LinkInfo {
@@ -56,7 +56,7 @@ const projects: ProjectInfo[] = [
             },
         ],
         headerImageSrc: PersonalWebsiteHeading,
-        summary: "Personal site and portfolio.",
+        summary: "A personal site and portfolio.",
         technologies: ["React", "TypeScript", "Bootstrap", "HTML/CSS", "GitHub Pages"],
         markdown: testMarkdown,
     },
@@ -104,16 +104,31 @@ const projects: ProjectInfo[] = [
         headerImageSrc: EmpathHeading,
     },
     {
-        id: "insight-ubc",
-        name: "Insight UBC",
-        start: new Date(2021, 8),
-        finished: new Date(2022, 11),
-        affiliation: "Course Project",
-        links: [],
-        headerImageSrc: InsightUBCHeading,
-        summary: "A REST API that supports custom queries over UBC course datasets.",
-        technologies: ["TypeScript", "Node.js", "Express"],
+        id: "got-room",
+        name: "Got Room For One More?",
+        start: new Date(2022, 8),
+        affiliation: "SAP Invitational Hackathon",
+        links: [
+            {
+                name: "Source",
+                url: "https://github.com/iForgot321/sap-hackathon",
+            },
+        ],
+        technologies: ["React", "PostgreSQL", "Node.js", "Heroku"],
+        summary: "A web application that helps SAP employees find and enjoy office amenities together.",
+        headerImageSrc: SAPAppHeading,
     },
+    // {
+    //     id: "insight-ubc",
+    //     name: "Insight UBC",
+    //     start: new Date(2021, 8),
+    //     finished: new Date(2022, 11),
+    //     affiliation: "Course Project",
+    //     links: [],
+    //     headerImageSrc: InsightUBCHeading,
+    //     summary: "A REST API that supports custom queries over UBC course datasets.",
+    //     technologies: ["TypeScript", "Node.js", "Express"],
+    // },
     {
         id: "codenames-app",
         name: "Codenames App",
