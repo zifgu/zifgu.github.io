@@ -60,7 +60,7 @@ function NavItem(props: PropsWithChildren<any>) {
 export function NavBar() {
     // TODO: ideally, dark mode toggle should be outside navbar when collapsed
     return (
-        <Navbar id="top" expand="md">
+        <Navbar expand="md">
             <span className="nav__title ms-2">F.</span>
             <Navbar.Toggle aria-controls="navbar-nav">
                 <FontAwesomeIcon icon={faBars} />
@@ -68,7 +68,7 @@ export function NavBar() {
             <Navbar.Collapse id="navbar-nav">
                 <Nav className="ms-auto align-items-center gap-3">
                     <NavItem>
-                        <HashLink className="nav__link" to="/#top">Home</HashLink>
+                        <HashLink className="nav__link" to="/">Home</HashLink>
                     </NavItem>
                     {/*<NavItem>*/}
                     {/*    <HashLink className="nav__link" to="/#about">About</HashLink>*/}
