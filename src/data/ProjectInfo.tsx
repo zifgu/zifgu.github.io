@@ -114,9 +114,9 @@ const projects: ProjectInfo[] = [
             },
         ],
         technologies: ["React", "JavaScript", "Bootstrap", "Figma", "OpenAI"],
-        summary: "An NLP-based app that analyzes the emotion in text messages and suggests responses.",
+        summary: "An NLP-based web app that analyzes the emotion in text messages and suggests responses.",
         headerImageSrc: EmpathHeading,
-    },
+    }, 
     {
         id: "got-room",
         name: "Got Room For One More?",
@@ -140,7 +140,7 @@ const projects: ProjectInfo[] = [
     //     affiliation: "Course Project",
     //     links: [],
     //     headerImageSrc: InsightUBCHeading,
-    //     summary: "A REST API that supports custom queries over UBC course datasets.",
+    //     summary: "A REST API and client for custom queries over UBC course datasets.",
     //     technologies: ["TypeScript", "Node.js", "Express"],
     // },
     {
