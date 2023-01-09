@@ -3,7 +3,7 @@ import TransductionHeading from "./images/heading/TransductionHeading.png";
 import FanworksSiteHeading from "./images/heading/FanworksSiteHeading.png";
 import TimetableCalculatorHeading from "./images/heading/TimetableCalculatorHeading.png";
 import PersonalWebsiteHeading from "./images/heading/PersonalWebsiteHeading.png";
-import CodenamesSingleplayerHeading from "./images/heading/CodenamesSingleplayerHeading.png";
+import CodenamesMultiplayerHeading from "./images/heading/CodenamesMultiplayerHeading.png";
 import OERGeomaticsHeading from "./images/heading/OERGeomaticsHeading.png";
 import EmpathHeading from "./images/heading/EmpathHeading.png";
 import SAPAppHeading from "./images/heading/SAPAppHeading.png";
@@ -79,6 +79,22 @@ const projects: ProjectInfo[] = [
         headerImageSrc: OERGeomaticsHeading,
     },
     {
+        id: "codenames",
+        name: "Codenames",
+        start: new Date(2022, 11),
+        finished: new Date(2023, 0),
+        affiliation: "Personal Project",
+        links: [
+            {
+                name: "Source",
+                url: "https://github.com/zifgu/codenames",
+            },
+        ],
+        headerImageSrc: CodenamesMultiplayerHeading,
+        summary: "Open-source online Codenames with multiplayer support.",
+        technologies: ["React", "TypeScript", "Bootstrap", "Node.js", "Socket.IO"],
+    },
+    {
         id: "me-an-empath",
         name: "Me, An Empath",
         start: new Date(2022, 2),
@@ -98,7 +114,7 @@ const projects: ProjectInfo[] = [
             },
         ],
         technologies: ["React", "JavaScript", "Bootstrap", "Figma", "OpenAI"],
-        summary: "A web app that identifies the emotion in text messages and suggests responses.",
+        summary: "An NLP-based app that analyzes the emotion in text messages and suggests responses.",
         headerImageSrc: EmpathHeading,
     },
     {
@@ -113,7 +129,7 @@ const projects: ProjectInfo[] = [
             },
         ],
         technologies: ["React", "PostgreSQL", "Node.js", "Heroku"],
-        summary: "A web application that helps SAP employees find and enjoy office amenities together.",
+        summary: "A web app that helps SAP employees find and enjoy office amenities together.",
         headerImageSrc: SAPAppHeading,
     },
     // {
@@ -128,26 +144,6 @@ const projects: ProjectInfo[] = [
     //     technologies: ["TypeScript", "Node.js", "Express"],
     // },
     {
-        id: "codenames-app",
-        name: "Codenames App",
-        start: new Date(2021, 11),
-        finished: new Date(2022, 0),
-        affiliation: "Personal Project",
-        links: [
-            {
-                name: "View",
-                url: "https://rcodenames.netlify.app/",
-            },
-            {
-                name: "Source",
-                url: "https://github.com/zifgu/react-codenames-app",
-            },
-        ],
-        headerImageSrc: CodenamesSingleplayerHeading,
-        summary: "A website for playing the word-guessing game Codenames online.",
-        technologies: ["React", "TypeScript", "Bootstrap", "HTML/CSS"],
-    },
-    {
         id: "fanworks-site",
         name: "Fanworks Site",
         start: new Date(2021, 4),
@@ -155,7 +151,7 @@ const projects: ProjectInfo[] = [
         affiliation: "Course Project",
         links: [],
         headerImageSrc: FanworksSiteHeading,
-        summary: "A website for sharing fan-made fiction and artworks, inspired by Archive of Our Own.",
+        summary: "A platform for sharing fan-made fiction and artworks, inspired by Archive of Our Own.",
         technologies: ["Java", "SQL", "Oracle Database", "HTML/CSS"],
     },
     {
