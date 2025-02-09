@@ -70,9 +70,9 @@ export function NavBar() {
                     <NavItem>
                         <HashLink className="nav__link" to="/">Home</HashLink>
                     </NavItem>
-                    {/*<NavItem>*/}
-                    {/*    <HashLink className="nav__link" to="/#about">About</HashLink>*/}
-                    {/*</NavItem>*/}
+                    <NavItem>
+                        <HashLink className="nav__link" to="/#about">About</HashLink>
+                    </NavItem>
                     <NavItem>
                         <HashLink className="nav__link" to="/#projects">Projects</HashLink>
                     </NavItem>

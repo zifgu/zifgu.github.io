@@ -19,13 +19,13 @@ function HeroIcon({icon, link}: any) {
 
 export function Hero() {
     return (
-        <Row style={{height: "90vh"}}>
+        <Row className="hero__container">
             <Col xs={9} md={4} className="hero__text mx-5">
                 <h1>
                     Hi, I'm Floria.
                 </h1>
                 <p className="my-4 hero__subtitle">
-                    I'm a Computer Science student at the University of British Columbia.
+                    I'm a Computer Science Master's student at the University of British Columbia.
                 </p>
                 <div className="icon-container hero__icon-container">
                     {

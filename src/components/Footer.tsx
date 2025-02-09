@@ -24,7 +24,7 @@ export function Footer() {
                     }
                 </div>
                 <p className="footer__acknowledgments">
-                    Copyright <span className="fs-5">&copy;</span> 2022 Floria Gu.
+                    Copyright <span className="fs-5">&copy;</span> 2025 Floria Gu.
                 </p>
             </Col>
         </Row>

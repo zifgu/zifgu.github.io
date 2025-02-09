@@ -7,7 +7,7 @@ export function MainPage() {
     return (
         <>
             <Hero/>
-            {/*<About/>*/}
+            <About/>
             <Projects/>
         </>
     );

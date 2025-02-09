@@ -3,31 +3,74 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Image from "react-bootstrap/Image";
 import { Link } from "react-router-dom";
-import {formatProjectTime, getAllProjects, LinkInfo, ProjectInfo} from "../data/ProjectInfo";
+import {
+    formatProjectTime,
+    getAllProjects,
+    groupProjectsByAffiliation,
+    LinkInfo, ProjectAffiliation,
+    ProjectInfo
+} from "../data/ProjectInfo";
 import "../css/Projects.css";
 
 export function Projects() {
+    const projectsByAffiliation = groupProjectsByAffiliation();
     return (
-        <Row id="projects" className="py-5 px-2 px-md-5 gy-4" xs={1}>
-            <Col>
-                <h2>Programming</h2>
-            </Col>
-            <Col>
-                <Row className="g-4">
-                    {
-                        getAllProjects()
-                            .map((project: ProjectInfo) => (
-                                <Col md={4} key={project.name}>
-                                    <ProjectCard project={project}/>
-                                </Col>
-                            ))
-                    }
-                </Row>
+        <Row id="projects" className="pt-5 px-2 px-md-5 justify-content-center" xs={1}>
+            <Col md={9}>
+                <h2>Professional Projects</h2>
+                {
+                    projectsByAffiliation[ProjectAffiliation.Professional]
+                        .map((project: ProjectInfo) => (
+                            <Project key={project.name} project={project}/>
+                        ))
+                }
+                <h2>Personal Projects</h2>
+                {
+                    projectsByAffiliation[ProjectAffiliation.Personal]
+                        .map((project: ProjectInfo) => (
+                            <Project key={project.name} project={project}/>
+                        ))
+                }
             </Col>
         </Row>
     );
 }
 
+function Project(props: {project: ProjectInfo}) {
+    return (
+        <Row className="project-card align-items-center my-5 gy-3 gy-md-0">
+            <Col md={4}>
+                <Image
+                    fluid
+                    src={props.project.headerImageSrc}
+                    className="project-card__image"
+                />
+            </Col>
+            <Col md={8}>
+                <h5>
+                    {props.project.name}
+                </h5>
+                <div className="project-card__details">
+                    {formatProjectTime(props.project)}
+                </div>
+                <p className="mt-3">
+                    {props.project.summary}
+                </p>
+                <div className="d-flex flex-row gap-4">
+                    {
+                        props.project.links.map((link: LinkInfo) => (
+                            <a href={link.url} className="project-card__link" target="_blank" rel="noreferrer">
+                                {link.name}
+                            </a>
+                        ))
+                    }
+                </div>
+            </Col>
+        </Row>
+    );
+}
+
+// TODO: remove old
 function ProjectCard(props: {project: ProjectInfo}) {
     let projectImage = (
         <Image
@@ -68,7 +111,7 @@ function ProjectCard(props: {project: ProjectInfo}) {
             <div className="mt-auto mb-2 d-flex flex-row gap-4">
                 {
                     props.project.links.map((link: LinkInfo) => (
-                        <a href={link.url} target="_blank" rel="noreferrer">
+                        <a href={link.url} className="project-card__link" target="_blank" rel="noreferrer">
                             {link.name}
                         </a>
                     ))

@@ -27,7 +27,7 @@ const socialMedia: SocialMedia[] = [
     {
         site: "LinkedIn",
         icon: faLinkedin,
-        link: "https://www.linkedin.com/in/floria-gu-a60a52200/",
+        link: "https://www.linkedin.com/in/floria-gu01/",
         contactName: "Floria Gu",
         includeInHeader: true,
     },
