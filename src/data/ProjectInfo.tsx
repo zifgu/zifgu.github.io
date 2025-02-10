@@ -84,7 +84,7 @@ const projects: ProjectInfo[] = [
         links: [
             {
                 name: "Technical Report",
-                url: "",
+                url: "https://drive.google.com/file/d/1bb7yJaEMwwfSH5zRnfyzc8WcNa2pcTrf/view?usp=sharing",
             },
         ],
         headerImageSrc: RLCutterHeading,
