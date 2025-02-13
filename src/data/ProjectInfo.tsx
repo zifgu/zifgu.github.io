@@ -13,6 +13,7 @@ import UnicornsHeading from "./images/heading/UnicornsHeading.png";
 import ZenZoneHeading from "./images/heading/ZenZoneHeading.png";
 import TapestryHeading from "./images/heading/TapestryHeading.png";
 import ImageBlenderHeading from "./images/heading/ImageBlenderHeading.png";
+import FastAtlasHeading from "./images/heading/FastAtlasHeading.png";
 
 export interface LinkInfo {
     name: string,
@@ -20,6 +21,7 @@ export interface LinkInfo {
 }
 
 export enum ProjectAffiliation {
+    Publication = "publication",
     Professional = "professional",
     Personal = "personal",
 }
@@ -30,6 +32,8 @@ export interface ProjectInfo {
     affiliation: ProjectAffiliation,
     start: Date,
     finished?: Date | "present",
+    collaborators?: ReactNode,
+    venue?: string,
     summary: ReactNode,
     links: LinkInfo[],
     markdown?: string,
@@ -38,19 +42,24 @@ export interface ProjectInfo {
 }
 
 export function formatProjectTime(project: ProjectInfo): string {
+    if (project.venue !== undefined) {
+        return project.venue + " " + formatMonthYear(project.start, false, true);
+    }
+
     const showStartYear = project.finished === undefined || project.finished === "present" || project.start.getFullYear() !== project.finished.getFullYear();
-    const startString = formatMonthYear(project.start, showStartYear);
+    const startString = formatMonthYear(project.start, true, showStartYear);
     const endString = project.finished === undefined ? "" :
                              project.finished === "present" ? " - present" :
-                             " - " + formatMonthYear(project.finished, true);
+                             " - " + formatMonthYear(project.finished, true, true);
 
     return startString + endString;
 }
 
-function formatMonthYear(date: Date, includeYear: boolean) : string {
-    const options : Intl.DateTimeFormatOptions = {
-        month: "long"
-    };
+function formatMonthYear(date: Date, includeMonth: boolean, includeYear: boolean) : string {
+    const options : Intl.DateTimeFormatOptions = {};
+    if (includeMonth) {
+        options.month = "long";
+    }
     if (includeYear) {
         options.year = "numeric";
     }
@@ -59,6 +68,23 @@ function formatMonthYear(date: Date, includeYear: boolean) : string {
 }
 
 const projects: ProjectInfo[] = [
+    {
+        id: "fastatlas",
+        name: "FastAtlas: Real-Time Compact Atlases for Texture Space Shading",
+        start: new Date(2025, 4),
+        affiliation: ProjectAffiliation.Publication,
+        collaborators: <>Nicholas Vining, Alexander Majercik*, <u>Floria Gu</u>*, Towaki Takikawa, Ty Trusty, Paul Lalonde, Morgan McGuire, and Alla Sheffer (* equal contribution)</>,
+        venue: "Eurographics",
+        links: [
+            {
+                name: "Project Page",
+                url: "https://www.cs.ubc.ca/labs/imager/tr/2025/fastatlas/",
+            },
+        ],
+        headerImageSrc: FastAtlasHeading,
+        summary: <>Texture-space shading (TSS) methods decouple shading and rasterization, allowing shading to be performed at a different framerate and spatial resolution than rasterization. We propose <i>FastAtlas</i>, a novel atlasing method that runs entirely on the GPU and is fast enough to be performed at interactive rates per-frame. Our method combines new per-frame chart computation and parametrization strategies and an efficient general chart packing algorithm.</>,
+        technologies: ["C++", "OpenGL"],
+    },
     {
         id: "raytracer",
         name: "Raytracer",
@@ -326,6 +352,7 @@ const projects: ProjectInfo[] = [
 
 export function groupProjectsByAffiliation(): {[key in ProjectAffiliation] : ProjectInfo[]} {
     let result: {[key in ProjectAffiliation] : ProjectInfo[]} = {
+        [ProjectAffiliation.Publication]: [],
         [ProjectAffiliation.Professional]: [],
         [ProjectAffiliation.Personal]: [],
     };

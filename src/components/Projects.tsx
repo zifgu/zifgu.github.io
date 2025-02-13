@@ -17,6 +17,13 @@ export function Projects() {
     return (
         <Row id="projects" className="pt-5 px-2 px-md-5 justify-content-center" xs={1}>
             <Col md={9}>
+                <h2>Publications</h2>
+                {
+                    projectsByAffiliation[ProjectAffiliation.Publication]
+                        .map((project: ProjectInfo) => (
+                            <Project key={project.name} project={project}/>
+                        ))
+                }
                 <h2>Professional Projects</h2>
                 {
                     projectsByAffiliation[ProjectAffiliation.Professional]
@@ -50,12 +57,18 @@ function Project(props: {project: ProjectInfo}) {
                 <h5>
                     {props.project.name}
                 </h5>
+                {
+                    props.project.collaborators &&
+                    <div className="project-card__details mb-2">
+                        {props.project.collaborators}
+                    </div>
+                }
                 <div className="project-card__details">
                     {formatProjectTime(props.project)}
                 </div>
-                <p className="mt-3">
+                <div className="my-3">
                     {props.project.summary}
-                </p>
+                </div>
                 <div className="d-flex flex-row gap-4">
                     {
                         props.project.links.map((link: LinkInfo) => (
